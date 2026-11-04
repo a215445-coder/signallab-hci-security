@@ -20,7 +20,7 @@ python3 -m http.server 8000 --directory dist
 
 Then open [the local simulator](http://localhost:8000). Keep the companion Markdown documents in `dist` so the app's documentation downloads remain available.
 
-For GitHub Pages, publish the **contents of `dist`** as the site artifact. The hosted site should have `index.html` at its URL root. The development repository is [a215445-coder/signallab-hci-security](https://github.com/a215445-coder/signallab-hci-security). GitHub Pages has not been published.
+For GitHub Pages, publish the **contents of `dist`** as the site artifact. The hosted site should have `index.html` at its URL root. The development repository is [a215445-coder/signallab-hci-security](https://github.com/a215445-coder/signallab-hci-security). GitHub Pages publishing is configured from the `gh-pages` branch: [Open SignalLab](https://a215445-coder.github.io/signallab-hci-security/).
 
 ## Explore the simulator
 
@@ -93,8 +93,8 @@ The app's **Research & guide** workspace provides direct downloads of the suppor
 |---|---|
 | Participant name / matric number | TO BE COMPLETED |
 | Official course code and title | TO BE COMPLETED |
-| GitHub repository | [Development repository](https://github.com/a215445-coder/signallab-hci-security); private development, public submission visibility pending |
-| GitHub Pages link | NOT YET DEPLOYED |
+| GitHub repository | [Development repository](https://github.com/a215445-coder/signallab-hci-security); public repository |
+| GitHub Pages link | [Open SignalLab](https://a215445-coder.github.io/signallab-hci-security/) |
 | Actual 2–3 minute demo video | TO BE RECORDED |
 | Peer trial findings | Record actual results in `dist/VALIDATION.md` |
 | Lecturer concept review | PENDING — encouraged by the teaching kit |
