@@ -1,0 +1,11 @@
+.DS_Store
+*.zip
+*.tar.gz
+node_modules/
+.env
+.env.*
+# Working fragments already integrated into the standalone application.
+/policy-feature.js
+/policy-feature.css
+/transfer-feature.js
+/transfer-feature.css
