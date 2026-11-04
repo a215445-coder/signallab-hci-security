@@ -2,7 +2,9 @@
 
 **The human side of cybersecurity.** An interactive learning simulator connecting phishing decisions, security-interface design and warning-policy trade-offs.
 
-Built for the FTSM Simulator Challenge, with an English learner interface. This repository contains the current v2 development build; GitHub Pages is not deployed yet.
+Built for the FTSM Simulator Challenge, with an English learner interface. This repository contains the current v2 development build; GitHub Pages publishing is configured from the `gh-pages` branch.
+
+**[Open the simulator](https://a215445-coder.github.io/signallab-hci-security/)**
 
 ## Try it
 
@@ -34,4 +36,15 @@ Run `node scripts/check.cjs` to check JavaScript syntax and the actual embedded 
 
 The [official teaching kit](https://nazatulainiabdmajid.github.io/kit-cabaran-simulator-FTSM/#hantar) allocates **25% accuracy, 25% interactivity/functionality, 20% learning value, 15% creativity, 10% meaningful generative AI use and 5% documentation/video**. Creativity is one part of the score.
 
-Policy scores and costs are explicitly synthetic teaching fixtures, not a real detector or NIST Phish Scale ratings. Practice results are not proof of learning improvement. Actual peer trials, course-content review, participant details, public submission links and the final video remain to be completed.
+Policy scores and costs are explicitly synthetic teaching fixtures, not a real detector or NIST Phish Scale ratings. Practice results are not proof of learning improvement. Actual peer trials, course-content review, participant details, the final video remain to be completed.
+
+## Teacher’s workflow — status checked 5 November 2026
+
+Follow the [teaching kit](https://nazatulainiabdmajid.github.io/kit-cabaran-simulator-FTSM/#hantar) in this order. Completed implementation does not replace the research and human checks.
+
+1. **Choose:** Cybersecurity × HCI, focusing on phishing decisions and warning interfaces. Confirm the exact course concept against lecture material. Registration status is unconfirmed; deadline 18 December 2026.
+2. **Research and build:** The simulator is implemented. The kit’s Scopus AI → NotebookLM → Prompt 1–5 workflow has not been completed as written. Existing references and the actual Codex process are recorded in the AI design log; no unperformed tool use is claimed.
+3. **Check and test:** Automated policy calculations and selected browser journeys have passed. Finish the five manual checks, actual classmate trials and lecturer confirmation using the validation record.
+4. **Prepare submission:** Repository and Pages publishing are configured; short documentation and the video script exist. The actual 2–3 minute demo video remains to be recorded. Finish preparation by 3 January 2027; submit during 4–17 January 2027.
+
+The kit says one entry per student and no live presentation. Confirm how any group coursework maps to the individual competition entry.
