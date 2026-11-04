@@ -1,119 +1,102 @@
-# SignalLab — The Human Side of Security
+# SignalLab v2 · The Human Side of Security
 
-An interactive learning simulator for **Cybersecurity × Human–Computer Interaction (HCI)**.
+An interactive **Cybersecurity × Human–Computer Interaction** learning simulator for the FTSM Interactive Learning Simulator Challenge.
 
-## Submission details to complete
+**Explore one question:** How can a security interface help people make safer decisions while avoiding unnecessary interruptions?
 
-- Participant name / matric number: **TO BE COMPLETED**
-- Course code and official course title: **TO BE COMPLETED**
-- GitHub repository URL: **TO BE COMPLETED AFTER UPLOAD**
-- GitHub Pages URL: **TO BE COMPLETED AFTER PUBLISHING**
-- Demo video URL (2–3 minutes): **TO BE COMPLETED AFTER RECORDING**
-- Lecturer review (encouraged): **PENDING — do not claim approval before review**
-- Peer trial: **PENDING — record actual feedback after testing**
+Students inspect fictional campus messages, redesign warnings, adjust an explicit warning policy and apply what they learned to fresh cases. The simulator runs in the browser with no installation, account or backend required.
 
-The published competition pages say one entry per student. If this work was developed as a group activity, confirm how it should be entered before submission.
+[GitHub repository](https://github.com/a215445-coder/signallab-hci-security) · [Start locally](#start-locally) · [Explore the simulator](#explore-the-simulator) · [Competition alignment](#competition-alignment) · [Research and limits](#research-and-limits) · [Submission status](#submission-status)
 
-## Concept and learning objectives
+## Start locally
 
-**Single central concept:** usable security warnings support human phishing decisions by making relevant evidence and appropriate next steps understandable.
+From the repository checkout, open **`dist/index.html`** in a modern browser. All application HTML, CSS and JavaScript are bundled in that file.
 
-After using SignalLab, a learner should be able to:
+If your browser restricts storage for local files, serve the `dist` folder:
 
-1. Distinguish a display name from a full sender address and link destination.
-2. Combine message cues with independently confirmed task context.
-3. Explain why HTTPS, familiar wording and personal relevance do not prove legitimacy.
-4. Choose between continuing a confirmed task, verifying an uncertain request, and reporting a suspicious message.
-5. Connect warning design to visibility, recognition over recall, error prevention and feedback.
+```sh
+python3 -m http.server 8000 --directory dist
+```
 
-## Why this is a simulator
+Then open [the local simulator](http://localhost:8000). Keep the companion Markdown documents in `dist` so the app's documentation downloads remain available.
 
-The learner changes warning style, full-sender visibility and decisions. JavaScript renders different interface conditions and computes feedback and practice statistics from those inputs. The scenario evidence and answer rationale remain fixed when the design changes. This makes the human–interface relationship observable rather than presenting only a static explanation.
+For GitHub Pages, publish the **contents of `dist`** as the site artifact. The hosted site should have `index.html` at its URL root. The development repository is [a215445-coder/signallab-hci-security](https://github.com/a215445-coder/signallab-hci-security). GitHub Pages has not been published.
 
-The three warning conditions are **Minimal** (a generic passive notice), **Clear** (specific relevant evidence) and **Actionable** (evidence plus a practical next step). These are teaching variants, not replicas of a published experiment. Actionable conditions deliberately provide more decision support, so their results must not be interpreted as unaided detection ability.
+## Explore the simulator
 
-## Features
+| Workspace | What you do | What it teaches |
+|---|---|---|
+| **Simulation** | Inspect six fictional campus messages and choose a next action | Use evidence and independently known context; verify when uncertain |
+| **Design lab** | Keep a message fixed while changing warning wording and sender visibility | Visibility, recognition over recall, actionable feedback and error prevention |
+| **Warning policy** | Predict, change an alert threshold, inspect message traces and vary illustrative costs | How a fixed rule produces missed threats and unnecessary interruptions |
+| **Transfer check** | Answer three fresh cases with an action and a reason; receive explanations after the complete set | Apply the principles without a guided warning revealing the answer |
+| **Learning report** | Review actual attempts, revisit decisions, answer recall questions and export records | Reflect on reasoning and distinguish guided practice from fresh application |
+| **Research & guide** | Read the rationale and download the supporting documents | Connect design choices to references and verification |
 
-- Six fictional campus-email scenarios across three author-designed teaching levels.
-- Suspicious, corroborated routine and uncertain messages.
-- Sender and destination inspection; message buttons reveal evidence rather than open links.
-- Interactive warning-design laboratory with fixed scenario ground truth.
-- Immediate evidence-based feedback and a connection to an HCI principle.
-- An optional difficulty suggestion after two consecutive supported or unsupported attempts; the learner chooses whether to change level.
-- Three recall questions without the email visible.
-- Local progress, missed-scenario review and JSON report export.
-- English interface, responsive layout, keyboard focus indicators and semantic controls.
+The distinctive learning loop connects **the student's inbox decision** with **the designer's warning-policy trade-off**. In the policy lab, inputs change a displayed rule's outputs; the learner can reproduce the calculation instead of simply watching an animation.
 
-## Research used and design interpretation
+### Learning objectives
 
-1. **Dawkins, S., & Jacobs, J. (2023). NIST Phish Scale User Guide. NIST TN 2276.** https://doi.org/10.6028/NIST.TN.2276
-   - Design interpretation: vary message cues and task context rather than equating poor spelling with phishing. Our difficulty levels are not formal NIST ratings.
-2. **Egelman, S., Cranor, L. F., & Hong, J. (2008). You've Been Warned: An Empirical Study of the Effectiveness of Web Browser Phishing Warnings. CHI 2008.** https://doi.org/10.1145/1357054.1357219
-   - Design interpretation: let students compare generic notices against more explanatory and actionable interfaces. No published effect size is used to generate learner outcomes.
-   - Author-hosted paper: https://www.cs.cmu.edu/~jasonh/publications/chi2008-active-warnings-study-final.pdf
+- Distinguish a display name from an actual sender or destination.
+- Explain why HTTPS and a personally relevant story do not establish legitimacy.
+- Choose a proportionate action, including verification through a known contact.
+- Explain how evidence visibility and actionable warnings support a human decision.
+- Trace how changing a warning threshold affects missed threats and false alarms.
 
-These sources were located through web research. No claim is made that Scopus AI or NotebookLM was used. If your course expects that workflow, independently retrieve and read the papers, then record the actual tools and findings.
+Feedback distinguishes the preferred action, a cautious alternative and a decision to revisit. Independent verification is not labelled dangerous merely because another action is preferred.
 
-## Scenario answer trace
+## Competition alignment
 
-| Scenario | Key contextual evidence | Best next action in this scenario | HCI concept |
-|---|---|---|---|
-| Account expiry | Unexpected password request; different service domain | Report message; independently open saved portal if needed | Visibility / recognition |
-| Library reminder | Loan and renewal service independently confirmed in saved portal | Continue the known library task | Calibrated trust |
-| Scholarship fee | Fee request contradicts known application process | Report; check saved application portal | Context-aware feedback |
-| Timetable export | User initiated task; export confirmed independently | Continue the known timetable task | System status / task continuity |
-| Research invitation | Opportunity plausible; platform not independently confirmed | Verify with lecturer through a known contact | Support for uncertainty |
-| Misleading hostname | Trusted name is a prefix of a different domain; unexpected sign-in | Report; use saved assessment portal | Security mental models |
+The official teaching kit was checked on **4 November 2026**. **Creativity and innovation contribute 15%**; accuracy, functionality and learning value together contribute 70%. The following is an evidence map, not a predicted score or award claim.
 
-Other safe responses can be reasonable in practice. The simulator assesses the **best-supported next step under the specific stated facts**, not a universal rule that verification or reporting is always wrong. The instructor should review these distinctions.
+| Criterion | Marks | Evidence in this project |
+|---|---:|---|
+| Concept and content accuracy | 25 | Scenario rationales, explicit model assumptions, message traces and validation record |
+| Interactivity and simulator functionality | 25 | Adjustable inputs, calculated outcomes, evidence inspection, persistence and export |
+| Learning value | 20 | Predict → observe → explain → transfer → recall |
+| Creativity and innovation | 15 | Link individual security decisions with the design of warning sensitivity and support |
+| Meaningful use of generative AI | 10 | Documented design, critique and revision process |
+| Documentation and video | 5 | Repository documentation and a focused 2–3 minute demonstration script |
 
-## Calculation rules and limits
+Official sources: [competition announcement](https://www.ftsm.ukm.my/cabaransimulator/) · [teaching kit and judging rubric](https://nazatulainiabdmajid.github.io/kit-cabaran-simulator-FTSM/#hantar).
 
-- First-attempt accuracy = supported first decisions / answered unique scenarios × 100, rounded to a whole percent.
-- Average decision time = sum of first-attempt seconds / answered unique scenarios.
-- Before any answer, accuracy and average time display a dash rather than a misleading zero.
-- Retry attempts are retained but never replace first-attempt results.
-- Each attempt records its warning condition, sender-visibility setting, evidence inspected and self-reported confidence.
-- Timing excludes time while the tab is hidden or another app view is active. It is an approximate practice measure and restarts on a reload or a new attempt.
-- Design-condition counts include retries. They are descriptive, not a controlled A/B comparison.
-- Report export contains only local practice decisions, timings and timestamps. No name, student ID or credential is requested.
+## Research and limits
 
-No risk probability, predicted detection accuracy or claimed learning improvement is invented. To evaluate learning outcomes, use instructor-reviewed pre/post tasks and balanced conditions with previously unseen messages.
+- **Dawkins & Jacobs (2023), NIST Phish Scale User Guide, TN 2276.** [Publication](https://doi.org/10.6028/NIST.TN.2276). Informs attention to message cues and recipient context.
+- **Egelman, Cranor & Hong (2008), You've Been Warned, CHI.** [DOI](https://doi.org/10.1145/1357054.1357219) · [author-hosted paper](https://www.cs.cmu.edu/~jasonh/publications/chi2008-active-warnings-study-final.pdf). Motivates examination of security-warning interfaces.
 
-## AI assistance and verification
+The policy lab uses an **authored synthetic dataset**, cue weights and illustrative cost units. It is not a deployed phishing detector or the formal NIST Phish Scale. Its counts describe that fixture batch; they do not predict human behaviour, real-world risk or warning fatigue. The warning variants are original teaching designs, not replicas of the published experiment.
 
-Generative AI (Codex) assisted in scenario drafting, interface design, code and explanations. The originating chat records the actual instructions. The implementation brief was:
+Practice records describe the local session. On-screen support and repeated exposure affect performance. The first Transfer check run is separate from guided practice, but three fresh cases are not a validated assessment or proof of learning improvement.
 
-1. Build a static English-language HCI/cybersecurity simulator for the FTSM challenge.
-2. Keep scenario evidence fixed while warning design changes.
-3. Include prediction/decision, explanation, recall and optional difficulty support.
-4. Record actual attempts without fabricated effects.
-5. Use fictional domains and publish a portable, dependency-free artifact.
+Generative AI assisted with drafting, implementation and revision. References were located through web research; **Scopus AI and NotebookLM use is not claimed**. Peer feedback and lecturer approval must be recorded only after real review.
 
-During implementation, verify that domain mismatch is treated as evidence rather than sufficient proof, HTTPS is not described as proof of institutional identity, and unfamiliar but plausible invitations permit independent verification. Peer and lecturer checks remain pending until real people perform them.
+Fictional message links never open a real destination. The app collects no credentials and uses browser-local progress storage; exporting creates a local JSON file.
 
-## Run and publish
+## Repository guide
 
-The app is one dependency-free `index.html` file. Open it directly in a modern browser for offline use. If local-file storage is restricted, serve this folder with a local static web server. Documentation links need the two Markdown files in the same folder.
+Keep the project and its supporting evidence together:
 
-For GitHub Pages:
+| Path | Purpose |
+|---|---|
+| [`dist/index.html`](index.html) | Complete interactive simulator |
+| `dist/README.md` | This project overview and submission details |
+| [`dist/DEMO-SCRIPT.md`](DEMO-SCRIPT.md) | 2–3 minute screen-recording script |
+| [`dist/VALIDATION.md`](VALIDATION.md) | Calculation checks, peer-trial record and course review |
+| [`dist/AI-DESIGN-LOG.md`](AI-DESIGN-LOG.md) | Actual AI contributions, critiques and design revisions |
 
-1. Create the intended public GitHub repository.
-2. Upload **the contents of this folder** (`index.html`, `README.md`, `DEMO-SCRIPT.md`) into the repository root.
-3. Enable Settings → Pages → Deploy from a branch → main → / (root).
-4. Verify the deployed simulator and documentation links, then fill in the repository and Pages URLs above.
+The app's **Research & guide** workspace provides direct downloads of the supporting documents.
 
-The separate Sites preview is owner-private. It is not the public GitHub Pages link required for competition submission.
+## Submission status
 
-## Manual review before submission
+| Required detail | Status |
+|---|---|
+| Participant name / matric number | TO BE COMPLETED |
+| Official course code and title | TO BE COMPLETED |
+| GitHub repository | [Development repository](https://github.com/a215445-coder/signallab-hci-security); private development, public submission visibility pending |
+| GitHub Pages link | NOT YET DEPLOYED |
+| Actual 2–3 minute demo video | TO BE RECORDED |
+| Peer trial findings | Record actual results in `dist/VALIDATION.md` |
+| Lecturer concept review | PENDING — encouraged by the teaching kit |
 
-- Follow each scenario using the answer trace above; challenge the rationale against your actual course notes.
-- Compare Minimal → Clear → Actionable on one fixed scenario; confirm only the interface support changes.
-- Test sender visibility, destination inspection, a wrong answer, retry and missed review.
-- Test the unanswered state, first answer, all six scenarios and repeated attempts.
-- Reload, export the report and check that first-attempt scores are retained.
-- Check keyboard navigation, narrow-screen layout and download links.
-- Ask a classmate to think aloud; record observed confusion and the resulting change.
-- Ask the course lecturer to review both cybersecurity facts and HCI terminology.
-
-Competition sources: https://www.ftsm.ukm.my/cabaransimulator/ and https://nazatulainiabdmajid.github.io/kit-cabaran-simulator-FTSM/
+The published rules specify **one entry per student**. If the project was developed as a group, confirm the entry arrangement with the organiser. Registration closes **18 December 2026**; submission is **4–17 January 2027** according to the checked pages. Recheck the official announcement before submitting.

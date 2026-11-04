@@ -1,48 +1,47 @@
-# SignalLab: 2–3 Minute Demo Script
+# SignalLab — 2–3 Minute Demonstration
 
-Target length: about 2 minutes 40 seconds. Record the actual screen; do not describe unmeasured learning gains.
+Target: **2 minutes 40 seconds**. Rehearse with the actual build. State only the values visible in your recording.
 
-## 0:00–0:20 — Problem and objective
+## 0:00–0:20 · The difficult concept
 
-**Show:** Simulation home.
+**Show:** Simulation home, then the Warning policy lab.
 
-“A cybersecurity warning only helps if a person can understand it and take the right action. SignalLab explores the connection between phishing decisions and human–computer interaction. Our goal is to make security evidence visible and the next step understandable.”
+“Security warnings must help people act without interrupting every legitimate task. SignalLab connects two perspectives: the student deciding what to trust, and the designer deciding when and how to warn.”
 
-## 0:20–0:55 — Explore a message
+## 0:20–1:00 · Predict and change a real input
 
-**Show:** Scenario 1. Select Minimal, inspect sender and destination.
+**Show:** Make the policy-lab prediction. Move the alert threshold; point to the changed outcomes. Try an extreme threshold briefly.
 
-“This is a fictional student inbox. The display name looks familiar, but we can inspect the actual sender and destination. The message requests a password at a different service and adds an urgent deadline. No real link is opened, and no credential is collected.”
+“First, predict what a lower threshold will do. Now watch the same fictional message batch run through the rule. More messages trigger a warning. Some are threats we wanted to catch; others are legitimate tasks we interrupt. At the extremes, the consequences become especially clear. These counts are calculated from the displayed fixtures, not an invented prediction of human behaviour.”
 
-## 0:55–1:25 — Demonstrate the HCI experiment
+## 1:00–1:25 · Explain the process
 
-**Show:** Switch Minimal → Clear → Actionable; toggle full sender inline.
+**Show:** Open a message calculation trace, then change the illustrative cost weights.
 
-“The message stays the same while the interface changes. Minimal gives a generic notice. Clear explains the relevant evidence. Actionable adds a safe next step. Showing the full sender also brings hidden information into view. These choices illustrate visibility, recognition over recall and error prevention.”
+“This trace shows the evidence score and the threshold comparison. The message's ground truth stays fixed. We can also change how much we value avoiding a missed threat versus avoiding an unnecessary interruption. The resulting cost expresses our chosen priorities, not a measured financial loss.”
 
-## 1:25–1:55 — Decision and feedback
+## 1:25–1:55 · Connect policy to interface design
 
-**Show:** Set confidence, choose Report message, read feedback. Briefly open scenario 5, the research invitation.
+**Show:** Design lab, one fixed scenario. Switch Minimal → Clear → Actionable; show the full sender.
 
-“A decision produces an explanation and an HCI connection. The simulator includes six scenarios, including independently confirmed routine messages and uncertain invitations. When the evidence is incomplete, checking with a known contact is better than pretending we know the answer.”
+“Deciding when to warn is only half the problem. This generic notice leaves the learner to work out what matters. Clear explains the evidence; Actionable adds a practical next step. Visible addresses support recognition, and explicit actions support error prevention.”
 
-## 1:55–2:20 — Learning report
+## 1:55–2:20 · Check understanding
 
-**Show:** Learning report, recall questions and export button.
+**Show:** A fresh Transfer check case, then Learning report / recall.
 
-“The report records real decisions and timing. First-attempt results remain unchanged by retries. Learners can revisit missed scenarios and recall principles without the inbox. These records support reflection; they are not a controlled experiment or proof of real-world detection ability.”
+“Guided success can mean the interface helped, so we also use fresh cases without the answer being signalled first. Learners record their judgement and confidence, then read the explanation. Practice records and recall support reflection; they do not establish a causal learning effect.”
 
-## 2:20–2:40 — Research and AI
+## 2:20–2:40 · Evidence and AI contribution
 
-**Show:** Research & guide.
+**Show:** Research & guide and the documentation links.
 
-“The design draws on the NIST Phish Scale and research on browser phishing warnings. Generative AI assisted with drafting and implementation. We verify scenario logic against references and course material, and document actual peer feedback and lecturer review before submission.”
+“The design is informed by NIST's work on phishing cues and context, and research on browser warnings. Generative AI helped build and revise the simulator. Our design log documents the decisions and limitations. The validation record distinguishes software checks from the peer and lecturer reviews we actually complete.”
 
-## Recording checklist
+## Before recording
 
-- Replace the participant/course fields in the README with real details.
-- Check the public GitHub Pages version before recording.
-- Clear local practice records if you want to start from a blank session.
-- Record your own interaction and voice; do not claim checks you have not performed.
-- Keep the final video between two and three minutes.
-- Add the final video link, repository link and GitHub Pages link to the README.
+- Complete participant and course details; verify the public GitHub Pages URL.
+- Record the current build and use its exact labels and calculated values.
+- If peer or lecturer review is still pending, say so; do not imply approval.
+- Keep the final video between two and three minutes and add its link to README.md.
+- Show the distinctive input → calculation → output sequence early; avoid spending the video on menus.
