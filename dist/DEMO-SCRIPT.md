@@ -1,6 +1,6 @@
 # SignalLab — real browser walkthrough
 
-Current video: [Watch v7](demo.html) · [Narration transcript](media/demo-transcript-v7.md).
+Current video: [Watch v8](demo.html) · [Narration transcript](media/demo-transcript-v8.md).
 
 Duration: approximately 2 minutes 51 seconds, 1920 × 1080. The approved v3 narration is preserved unchanged. The application fills the frame above a caption strip. Smooth zooms move from the full viewport into the relevant control, result, calculation or evidence, then return to the full viewport.
 
@@ -17,3 +17,7 @@ Peer testing, lecture alignment and optional lecturer review remain pending.
 The current cut was authored and rendered in OpenFilm. The full website viewport establishes context before focus zooms. There are 21 independently editable real recording shots, an approved narration track and subtitles. Open `video-studio` with `npx -y openfilm@latest open video-studio`. Check with `look`; export with `render --fps 24 --subtitles`. The earlier Python v6 build remains reproducible.
 
 OpenFilm checked 12 sample frames twice in shuffled orders: deterministic output passed. The 1920 × 1080 MP4 was decoded in full, and burned subtitles were visually checked. The source narration and its speed are retained. No additional learner trial has been performed.
+
+## Remotion edition (v8)
+
+The current edit adds animated introductory and closing sequences, two brief evidence/threshold annotations, and smaller captions constrained to a 680px area on the 1920px frame. The actual recording remains the body of the video. Voice, speed and timing are retained. Editable project: `remotion-studio`; run `npm ci` then `npm run dev`. Render: `npx remotion render SignalLab out.mp4`. Caption timing is stored in JSON. The original v7 caption strip is masked, so only one caption layer is shown.
