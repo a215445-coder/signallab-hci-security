@@ -101,6 +101,10 @@ The app's **Research & guide** workspace provides direct downloads of the suppor
 
 The published rules specify **one entry per student**. If the project was developed as a group, confirm the entry arrangement with the organiser. Registration closes **18 December 2026**; submission is **4–17 January 2027** according to the checked pages. Recheck the official announcement before submitting.
 
+## Demonstration video
+
+[Watch the 2 minute 54 second demo](https://a215445-coder.github.io/signallab-hci-security/demo.html). Actual application screenshots, edited with English synthetic narration and on-screen captions. [Transcript](media/demo-transcript.md). Participant sign-off remains pending; this is not learner-study footage.
+
 ## TK2233 research follow-up
 
 The participant confirmed **TK2233 Cybersecurity** on 5 November 2026. Scopus AI was accessed through UKM Library; a cited open-access review was subsequently imported into NotebookLM as full PDF text. See [the actual research log](AI-DESIGN-LOG.md#research-follow-up--5-november-2026). Course-lecture alignment and human learning effects remain to be checked.
