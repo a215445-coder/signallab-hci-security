@@ -103,7 +103,7 @@ The published rules specify **one entry per student**. If the project was develo
 
 ## Demonstration video
 
-[Watch the 2 minute 54 second demo](https://a215445-coder.github.io/signallab-hci-security/demo.html). Actual application screenshots, edited with English synthetic narration and on-screen captions. [Transcript](media/demo-transcript.md). Participant sign-off remains pending; this is not learner-study footage.
+[Watch the 2 minute 45 second demo](https://a215445-coder.github.io/signallab-hci-security/demo.html). Actual application screenshots, edited with English synthetic narration and on-screen captions. [Transcript](media/demo-transcript-v2.md). Participant sign-off remains pending; this is not learner-study footage.
 
 ## TK2233 research follow-up
 
