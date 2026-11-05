@@ -6,7 +6,7 @@ This is a concise account of work in the originating Codex conversation. It is n
 
 - **Generative AI:** Codex, used for planning, scenario and explanation drafts, interface design, implementation and revision.
 - **Reference discovery:** web research and direct review of the competition teaching kit.
-- **Scopus AI / NotebookLM:** not used in the recorded build so far; no use or extraction is claimed.
+- **Scopus AI / NotebookLM:** used on 5 November 2026 through UKM Library and the student’s research notebook; see the research follow-up below. The initial prototype predates this step.
 - **Human course validation:** pending. AI review cannot stand in for a classmate or lecturer.
 
 ## Iteration record
@@ -45,3 +45,19 @@ This is a concise account of work in the originating Codex conversation. It is n
 - The final commit or version shown in the video.
 
 Do not invent prompts, article readings, test participants, endorsements or numerical improvements. The meaningful AI contribution is the documented design–critique–revision process and its verified output.
+
+## Research follow-up — 5 November 2026
+
+Course confirmed by participant: **TK2233 Cybersecurity**. Lecture-specific coverage remains unverified.
+
+Actual search route: UKM Library e-resources → MyLOFT → Scopus → Scopus AI. Search question: “What interactive simulation-based or gamified tools have been evaluated for teaching university students phishing recognition and human-centred cybersecurity? Which features, such as immediate feedback, URL inspection, contextual warnings and retrieval practice, improved learning or transfer, and what limitations did the studies report?”
+
+Screening correction: Scopus AI reference 8, *Phishing URL Classification in Cybersecurity Education: A Comparative Study of RF, SVM, DT, and LR*, evaluates ML models. Its model accuracy is not evidence of human learning gains. Reference 9, Köhler et al. (2024), DOI 10.1007/978-3-031-61489-7_15, concerns a human study; only its abstract and publisher preview were inspected, so no full-text review is claimed.
+
+Citation follow-up from reference 9 identified the open-access review **Jampen et al. (2020), DOI 10.1186/s13673-020-00237-7**. Relevant full-text sections were read. The publisher PDF was downloaded locally. NotebookLM could not import its web/PDF URLs, and direct file upload lacked browser permission. Its full PDF text was extracted without AI summarisation and imported using Copied text; one usable source was confirmed. No Libquest request was made because this review is openly available.
+
+Research-to-design check (review sections: Feedback, Knowledge retention, Implications for anti-phishing training tools): contextual explanations support the existing decision feedback; progression supports the difficulty guidance; recurring training motivates later follow-up, which the current same-session recall does not measure. These are design links, not measured effects of SignalLab.
+
+NotebookLM was asked to provide a cited evidence table, separate findings from design proposals, suggest three elements and finish with a five-line Prompt 1 summary. The notebook remains in the participant’s account; its contents are not publicly shared.
+
+Extraction review: NotebookLM produced a cited table and three suggested elements, but also proposed campus-directory integration, DNS changes and a CRI diagnostic, exceeding the standalone teaching scope. Its page ranges were not independently verified. These suggestions were rejected; section names are used for verification. A follow-up asks for exactly five short lines confined to fictional, offline teaching interactions.
