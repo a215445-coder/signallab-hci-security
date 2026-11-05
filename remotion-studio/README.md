@@ -7,3 +7,5 @@ Current delivery frame: 1920 × 906 to remove the prior footer entirely while re
 Current v10 output: 1920 × 1080, full-frame website footage. Source viewport is expanded vertically to fill the delivery frame without side cropping. No panels, letterbox strips or caption boxes.
 
 V11: expanded three-part closing recap, public simulator QR, and a 72-frame screen-off/black tail after the unchanged narration. Full composition: 4186 frames at 24 fps.
+
+V12 adds `src/Motion.tsx` with source-timed focus outlines, trade-off connector and chapter sweeps. Outro entrance stays transparent over the running walkthrough; only the final shutdown uses a black background.
