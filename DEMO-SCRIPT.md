@@ -1,6 +1,6 @@
 # SignalLab — real browser walkthrough
 
-Current video: [Watch v12](demo.html) · [Narration transcript](media/demo-transcript-v12.md).
+Current video: [Watch v13](demo.html) · [Narration transcript](media/demo-transcript-v13.md).
 
 Duration: approximately 2 minutes 51 seconds, 1920 × 1080. The approved v3 narration is preserved unchanged. The application fills the frame above a caption strip. Smooth zooms move from the full viewport into the relevant control, result, calculation or evidence, then return to the full viewport.
 
@@ -37,3 +37,7 @@ The closing recap contains evidence inspection, threshold trade-offs, and action
 ## Guided motion edition (v12)
 
 Focus outlines highlight the threshold, calculation, actionable warning and action/reason choices. A connector links the recorded missed-threat and false-alarm counts. Three brief sweeps mark design, transfer and research chapters without altering the source action or narration timing. The closing recap crossfades over the previous video instead of over black; the final screen-off animation is retained. These are editorial annotations, not extra app capabilities.
+
+## Quiet sound accents (v13)
+
+Fifteen low-level accents follow recorded selections, focus annotations, chapter sweeps and the final shutdown. Sounds are synthesized locally by `scripts/add-demo-sound.py`; no external sample rights are required. The script stream-copies the v12 picture track, mixes audio at its existing speed and limits output peaks. Sound cues are also authored in the editable Remotion timeline through `src/SoundDesign.tsx`.
