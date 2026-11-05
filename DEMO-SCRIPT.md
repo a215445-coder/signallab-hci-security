@@ -1,6 +1,6 @@
 # SignalLab — real browser walkthrough
 
-Current video: [Watch v9](demo.html) · [Narration transcript](media/demo-transcript-v9.md).
+Current video: [Watch v10](demo.html) · [Narration transcript](media/demo-transcript-v10.md).
 
 Duration: approximately 2 minutes 51 seconds, 1920 × 1080. The approved v3 narration is preserved unchanged. The application fills the frame above a caption strip. Smooth zooms move from the full viewport into the relevant control, result, calculation or evidence, then return to the full viewport.
 
@@ -25,3 +25,7 @@ The current edit adds animated introductory and closing sequences, two brief evi
 ## Panel-free edition (v9)
 
 The delivery frame is 1920 × 906, matching the recorded website viewport. The former 174px footer is removed, preserving the full viewport without stretching or cropping its sides. Captions are small white text with a subtle shadow and no box. Animation, narration, speech speed and timing are retained.
+
+## Full-frame edition (v10)
+
+The delivery frame is 1920 × 1080. The real website image fills the entire frame vertically and horizontally, including the former footer area, with no top/bottom panels or letterboxing. To preserve every horizontal label, the website footage is expanded vertically from its source viewport; no side content is cropped. Prior chapter badges are removed. Captions remain small, unboxed overlays. Narration timing and opening/closing animations are retained.
