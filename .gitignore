@@ -9,3 +9,6 @@ node_modules/
 /policy-feature.css
 /transfer-feature.js
 /transfer-feature.css
+
+# Downloaded research files stay local; publish references and notes only.
+.research-local/

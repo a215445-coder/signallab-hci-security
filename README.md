@@ -42,8 +42,8 @@ Policy scores and costs are explicitly synthetic teaching fixtures, not a real d
 
 Follow the [teaching kit](https://nazatulainiabdmajid.github.io/kit-cabaran-simulator-FTSM/#hantar) in this order. Completed implementation does not replace the research and human checks.
 
-1. **Choose:** Cybersecurity × HCI, focusing on phishing decisions and warning interfaces. Confirm the exact course concept against lecture material. Registration status is unconfirmed; deadline 18 December 2026.
-2. **Research and build:** The simulator is implemented. The kit’s Scopus AI → NotebookLM → Prompt 1–5 workflow has not been completed as written. Existing references and the actual Codex process are recorded in the AI design log; no unperformed tool use is claimed.
+1. **Choose:** **TK2233 Cybersecurity × HCI**, focusing on phishing decisions and warning interfaces. Confirm the exact course concept against lecture material. Registration status is unconfirmed; deadline 18 December 2026.
+2. **Research and build:** The simulator is implemented. UKM Library / Scopus AI research and a NotebookLM full-text extraction were performed on 5 November 2026 as a follow-up to the prototype. See the AI design log for screening corrections and the open-access source. Applying the resulting five-line summary through the teacher’s staged prompts remains the next iteration; the original build is not relabelled as that process.
 3. **Check and test:** Automated policy calculations and selected browser journeys have passed. Finish the five manual checks, actual classmate trials and lecturer confirmation using the validation record.
 4. **Prepare submission:** Repository and Pages publishing are configured; short documentation and the video script exist. The actual 2–3 minute demo video remains to be recorded. Finish preparation by 3 January 2027; submit during 4–17 January 2027.
 

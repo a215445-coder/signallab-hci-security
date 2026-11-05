@@ -100,3 +100,7 @@ The app's **Research & guide** workspace provides direct downloads of the suppor
 | Lecturer concept review | PENDING — encouraged by the teaching kit |
 
 The published rules specify **one entry per student**. If the project was developed as a group, confirm the entry arrangement with the organiser. Registration closes **18 December 2026**; submission is **4–17 January 2027** according to the checked pages. Recheck the official announcement before submitting.
+
+## TK2233 research follow-up
+
+The participant confirmed **TK2233 Cybersecurity** on 5 November 2026. Scopus AI was accessed through UKM Library; a cited open-access review was subsequently imported into NotebookLM as full PDF text. See [the actual research log](AI-DESIGN-LOG.md#research-follow-up--5-november-2026). Course-lecture alignment and human learning effects remain to be checked.
