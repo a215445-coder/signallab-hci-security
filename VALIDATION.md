@@ -107,7 +107,7 @@ See [the teacher-step execution and trace](TEACHER-STEPS.md#follow-up-verificati
 
 ## Demo artifact — 5 November 2026
 
-A roughly 2 minute 51 second video presents real browser interactions with English synthetic narration, on-screen captions and focus zooms. It is a guided demonstration, not continuous screen recording or peer-study footage. [Play video](demo.html) · [Transcript](media/demo-transcript-v6.md). Participant review remains pending.
+A roughly 2 minute 51 second video presents real browser interactions with English synthetic narration, on-screen captions and focus zooms. It is a guided demonstration, not continuous screen recording or peer-study footage. [Play video](demo.html) · [Transcript](media/demo-transcript-v7.md). Participant review remains pending.
 
 ### Copy-ready peer task (about 10 minutes)
 
