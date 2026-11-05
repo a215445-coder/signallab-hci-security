@@ -61,3 +61,13 @@ Research-to-design check (review sections: Feedback, Knowledge retention, Implic
 NotebookLM was asked to provide a cited evidence table, separate findings from design proposals, suggest three elements and finish with a five-line Prompt 1 summary. The notebook remains in the participant’s account; its contents are not publicly shared.
 
 Extraction review: NotebookLM produced a cited table and three suggested elements, but also proposed campus-directory integration, DNS changes and a CRI diagnostic, exceeding the standalone teaching scope. Its page ranges were not independently verified. These suggestions were rejected; section names are used for verification. A follow-up asks for exactly five short lines confined to fictional, offline teaching interactions.
+
+The revised five-line answer was received and saved as a NotebookLM note. Reviewed design bridge for the next implementation prompt:
+
+1. Let TK2233 learners inspect fictional senders and destinations.
+2. Explain the evidence after a decision.
+3. Offer difficulty choices with performance-based guidance.
+4. Provide recall and plan a later follow-up session.
+5. Check application on fresh cases, recording actions and reasons.
+
+These lines are reviewed design adaptations. In particular, NotebookLM suggested quarterly testing; the current app does not schedule it. A short fresh-case exercise is descriptive evidence, not a validated transfer measure. NotebookLM’s response does not establish that the paper studies TK2233 or endorses this app.
