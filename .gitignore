@@ -12,3 +12,7 @@ node_modules/
 
 # Downloaded research files stay local; publish references and notes only.
 .research-local/
+
+# Local OpenFilm cache, editor state and exports.
+/video-studio/.film/
+/video-studio/*.mp4
