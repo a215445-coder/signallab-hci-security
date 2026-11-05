@@ -94,7 +94,7 @@ Do not describe a tiny convenience sample as proof of effectiveness. Reusing the
 
 - [ ] Participant/course details are accurate.
 - [ ] Group entry arrangement is confirmed if needed; published rule says one entry per student.
-- [ ] Public repository and working GitHub Pages links are in README.md.
+- [x] Public repository and working GitHub Pages links are in README.md.
 - [ ] Final 2–3 minute video shows the actual final build.
 - [ ] References, AI contribution and limitations are documented honestly.
 - [ ] Final software checks, peer trial and course-content review are recorded above.
@@ -104,3 +104,11 @@ Registration closes 18 December 2026; submissions are 4–17 January 2027 accord
 ## Staged follow-up checks — 5 November 2026
 
 See [the teacher-step execution and trace](TEACHER-STEPS.md#follow-up-verification) for the tested avatar, random input, returning recall and two-decision DDA behavior. Human review fields above remain pending.
+
+## Demo artifact — 5 November 2026
+
+A roughly 2 minute 54 second video presents actual public-app screenshots with English synthetic narration and on-screen captions. It is a guided demonstration, not continuous screen recording or peer-study footage. [Play video](demo.html) · [Transcript](media/demo-transcript.md). Participant review remains pending.
+
+### Copy-ready peer task (about 10 minutes)
+
+Open the simulator in a fresh browser profile, inspect one fictional message, predict the effect of lowering the threshold, compare thresholds 4 and 2, and explain one missed threat and one false alarm. Complete the three fresh cases without coaching. Record an anonymous participant code, any confusing wording, the first-run action/reason result, and one suggested improvement in the table above. Do not reset a participant’s first run during the trial.

@@ -4,7 +4,7 @@
 
 Built for the FTSM Simulator Challenge, with an English learner interface. This repository contains the current v2 development build; GitHub Pages publishing is configured from the `gh-pages` branch.
 
-**[Open the simulator](https://a215445-coder.github.io/signallab-hci-security/)**
+**[Open the simulator](https://a215445-coder.github.io/signallab-hci-security/)** · **[Watch the 2–3 minute demo](https://a215445-coder.github.io/signallab-hci-security/demo.html)**
 
 ## Try it
 
@@ -36,7 +36,7 @@ Run `node scripts/check.cjs` to check JavaScript syntax and the actual embedded 
 
 The [official teaching kit](https://nazatulainiabdmajid.github.io/kit-cabaran-simulator-FTSM/#hantar) allocates **25% accuracy, 25% interactivity/functionality, 20% learning value, 15% creativity, 10% meaningful generative AI use and 5% documentation/video**. Creativity is one part of the score.
 
-Policy scores and costs are explicitly synthetic teaching fixtures, not a real detector or NIST Phish Scale ratings. Practice results are not proof of learning improvement. Actual peer trials, course-content review, participant details, the final video remain to be completed.
+Policy scores and costs are explicitly synthetic teaching fixtures, not a real detector or NIST Phish Scale ratings. Practice results are not proof of learning improvement. Actual peer trials, course-content review, participant details, participant review of the demo remain to be completed.
 
 ## Teacher’s workflow — status checked 5 November 2026
 
@@ -45,7 +45,7 @@ Follow the [teaching kit](https://nazatulainiabdmajid.github.io/kit-cabaran-simu
 1. **Choose:** **TK2233 Cybersecurity × HCI**, focusing on phishing decisions and warning interfaces. Confirm the exact course concept against lecture material. Registration status is unconfirmed; deadline 18 December 2026.
 2. **Research and build:** The simulator is implemented. UKM Library / Scopus AI research and a NotebookLM full-text extraction were performed on 5 November 2026 as a follow-up to the prototype. See the AI design log for screening corrections and the open-access source. The reviewed five-line summary has now been applied through the staged follow-up documented in [Teacher steps](dist/TEACHER-STEPS.md); the original build is not relabelled as that process.
 3. **Check and test:** Automated policy calculations and selected browser journeys have passed. Finish the five manual checks, actual classmate trials and lecturer confirmation using the validation record.
-4. **Prepare submission:** Repository and Pages publishing are configured; short documentation and the video script exist. The actual 2–3 minute demo video remains to be recorded. Finish preparation by 3 January 2027; submit during 4–17 January 2027.
+4. **Prepare submission:** Repository and Pages publishing are configured; short documentation and the video script exist. A 2 minute 54 second guided demo with actual application screenshots, English synthetic narration and on-screen captions is available. It is edited screenshot footage, not a continuous screen recording or peer-study evidence. Final participant review remains pending. Finish preparation by 3 January 2027; submit during 4–17 January 2027.
 
 The kit says one entry per student and no live presentation. Confirm how any group coursework maps to the individual competition entry.
 

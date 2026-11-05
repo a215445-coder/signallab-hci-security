@@ -41,7 +41,7 @@ Use the trace table, boundary cases, content-reference check, actual peer trial 
 
 ## Step 5 — Share and submit
 
-[Public repository](https://github.com/a215445-coder/signallab-hci-security) and [GitHub Pages](https://a215445-coder.github.io/signallab-hci-security/) exist. Pages serves the standalone files from the gh-pages branch. Final video, participant details, registration and actual human reviews remain pending. The kit requires a 2–3 minute video and short documentation; no live presentation. One entry per student.
+[Public repository](https://github.com/a215445-coder/signallab-hci-security) and [GitHub Pages](https://a215445-coder.github.io/signallab-hci-security/) exist. Pages serves the standalone files from the gh-pages branch. The guided demonstration video is available at [demo.html](demo.html); participant video review, participant details, registration and actual human reviews remain pending. The kit requires a 2–3 minute video and short documentation; no live presentation. One entry per student.
 
 ## Follow-up verification
 
