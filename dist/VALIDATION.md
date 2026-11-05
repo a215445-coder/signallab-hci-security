@@ -100,3 +100,7 @@ Do not describe a tiny convenience sample as proof of effectiveness. Reusing the
 - [ ] Final software checks, peer trial and course-content review are recorded above.
 
 Registration closes 18 December 2026; submissions are 4–17 January 2027 according to the teaching kit checked on 4 November 2026. Recheck [the official page](https://www.ftsm.ukm.my/cabaransimulator/) before submitting.
+
+## Staged follow-up checks — 5 November 2026
+
+See [the teacher-step execution and trace](TEACHER-STEPS.md#follow-up-verification) for the tested avatar, random input, returning recall and two-decision DDA behavior. Human review fields above remain pending.
