@@ -1,6 +1,6 @@
 # SignalLab — real browser walkthrough
 
-Current video: [Watch v11](demo.html) · [Narration transcript](media/demo-transcript-v11.md).
+Current video: [Watch v12](demo.html) · [Narration transcript](media/demo-transcript-v12.md).
 
 Duration: approximately 2 minutes 51 seconds, 1920 × 1080. The approved v3 narration is preserved unchanged. The application fills the frame above a caption strip. Smooth zooms move from the full viewport into the relevant control, result, calculation or evidence, then return to the full viewport.
 
@@ -33,3 +33,7 @@ The delivery frame is 1920 × 1080. The real website image fills the entire fram
 ## Expanded closing and screen-off edition (v11)
 
 The closing recap contains evidence inspection, threshold trade-offs, and action-plus-reason transfer; it also includes a QR link to the public simulator. After narration, a screen-off animation compresses the picture into a line, a point and then pure black. 4186 frames at 24 fps (approximately 2:54), within the 2–3 minute brief. Approved narration and the full-frame walkthrough are retained.
+
+## Guided motion edition (v12)
+
+Focus outlines highlight the threshold, calculation, actionable warning and action/reason choices. A connector links the recorded missed-threat and false-alarm counts. Three brief sweeps mark design, transfer and research chapters without altering the source action or narration timing. The closing recap crossfades over the previous video instead of over black; the final screen-off animation is retained. These are editorial annotations, not extra app capabilities.
