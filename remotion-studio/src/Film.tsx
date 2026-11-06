@@ -4,9 +4,9 @@ import {Video,Audio} from '@remotion/media';
 import captions from './captions.json';
 import {Focus,Sweep,TradeOff} from './Motion';
 import {SoundDesign} from './SoundDesign';
-const ink='#102b25',mint='#b9e88a',paper='#f2f3eb';
+import {Intro} from './Intro';
+const ink='#102b25',paper='#f2f3eb';
 const enter=(f:number,d=0)=>spring({frame:f-d,fps:24,config:{damping:200}});
-const Intro:React.FC=()=>{const f=useCurrentFrame();return <AbsoluteFill style={{background:ink,color:paper,padding:100,opacity:interpolate(f,[205,224],[1,0],{extrapolateLeft:'clamp',extrapolateRight:'clamp'})}}><div style={{fontSize:24,letterSpacing:5,color:mint}}>SIGNALLAB / TK2233 CYBERSECURITY × HCI</div><div style={{fontSize:104,fontWeight:700,lineHeight:1.06,marginTop:110,translate:`0px ${40*(1-enter(f))}px`}}>One warning.<br/><span style={{color:mint}}>Two consequences.</span></div><div style={{fontSize:30,marginTop:50,color:'#b6c8bc'}}>Explore how interface design shapes a safer decision.</div><svg style={{position:'absolute',right:110,top:280}} width="620" height="450" viewBox="0 0 620 450"><path d="M50 225H230C330 225 300 80 400 80H570M230 225C330 225 300 370 400 370H570" stroke="#486753" strokeWidth="3" fill="none"/><rect x="10" y="175" width="130" height="100" rx="18" fill={mint}/><path d="M30 198l45 38 45-38" stroke={ink} strokeWidth="5" fill="none"/><circle cx={50+520*((f%80)/80)} cy={225} r="8" fill={paper} opacity=".5"/><text x="385" y="65" fill={mint} fontSize="27">Catch an attack</text><text x="350" y="412" fill="#f3bd89" fontSize="27">Interrupt a real task</text><circle cx="570" cy="80" r={18*enter(f,18)} fill={mint}/><circle cx="570" cy="370" r={18*enter(f,35)} fill="#f3bd89"/></svg></AbsoluteFill>};
 const Outro:React.FC=()=>{
  const f=useCurrentFrame();
  const sy=interpolate(f,[324,346],[1,.003],{extrapolateLeft:'clamp',extrapolateRight:'clamp'});
