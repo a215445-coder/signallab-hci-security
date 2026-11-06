@@ -22,14 +22,198 @@
 @media(max-width:740px){.policy-layout{grid-template-columns:1fr}.policy-controls{position:static;display:grid;grid-template-columns:1fr 1fr;gap:0 20px}.policy-controls>.card-kicker,.policy-controls>h2,.policy-controls>.policy-limits{grid-column:1/-1}.policy-rule{grid-column:2;grid-row:3/6}.policy-tools{grid-column:1/-1;grid-template-columns:1fr 1fr}.policy-context{display:block}.policy-context p{margin-top:10px}.policy-message{grid-template-columns:26px minmax(0,1fr) 38px 91px}.policy-outcome{grid-column:auto;justify-self:stretch}.policy-cost p{font-size:10px}}
 @media(max-width:480px){.policy-controls{display:block}.policy-context{padding:15px}.policy-tools{display:grid;grid-template-columns:1fr}.policy-predict{padding:20px}.policy-predictions button{font-size:11px;padding:12px}.policy-metrics{gap:8px}.policy-metric{padding:13px}.policy-metric>span{font-size:10px}.policy-metric>small{font-size:9px}.policy-cost{display:block}.policy-cost>p{margin-top:10px}.policy-message{grid-template-columns:21px minmax(0,1fr) 32px;gap:7px}.policy-outcome{grid-column:2/-1;justify-self:start}.policy-trace .section-top{display:block}.policy-trace .section-top>span{display:block;margin-top:7px}.policy-cue-trace li{font-size:9px}.policy-comparison>div{gap:7px}}
 
-.mira-guide{display:flex;gap:12px;align-items:center;margin:16px 0;padding:14px;background:#edf3e7;border:1px solid #d3dfca;border-radius:12px}.mira-guide svg{width:54px;height:66px;flex-shrink:0}.mira-bubble{background:white;border-radius:12px;padding:12px;font-size:12px}.mira-bubble b{display:block;margin-bottom:4px}.mentor-avatar{width:44px;height:52px;background:none}.mentor-avatar svg{width:44px;height:52px}</style>
+.mira-guide{display:flex;gap:12px;align-items:center;margin:16px 0;padding:14px;background:#edf3e7;border:1px solid #d3dfca;border-radius:12px}.mira-guide svg{width:54px;height:66px;flex-shrink:0}.mira-bubble{background:white;border-radius:12px;padding:12px;font-size:12px}.mira-bubble b{display:block;margin-bottom:4px}.mentor-avatar{width:44px;height:52px;background:none}.mentor-avatar svg{width:44px;height:52px}/* Evidence desk: shared workspace, readable mail, and inspectable decisions. */
+:root{--paper:#F5F6EF;--ink:#102B25;--green:#275942;--deep:#102B25;--line:#d8e1d6;--sub:#4d6257;--radius:15px;--shadow:0 5px 16px #102b2508}
+[hidden]{display:none!important}
+.app,.workspace{display:block;min-width:0}
+.desk-header{background:var(--deep);color:#fff;padding:10px clamp(16px,3vw,44px);display:flex;align-items:center;gap:32px;min-height:66px}
+.desk-header .brandname{display:inline;color:#fff;font-size:20px}
+.desk-header .brand-sub{display:none}
+.desk-header .brand{gap:10px;white-space:nowrap}
+.desk-header .brandmark{background:#d6f5b8;color:var(--deep);width:36px;height:36px}
+.desk-header nav{display:flex;gap:5px;align-items:center;flex-wrap:wrap}
+.desk-header .navbtn{width:auto;color:#edf5ec;min-height:44px;padding:8px 12px;gap:7px;font-size:13px}
+.desk-header .navbtn .navlabel{display:inline}
+.desk-header .navbtn.active,.desk-header .navbtn:hover{background:#dcecd5;color:var(--deep)}
+.desk-header .navbtn .navbadge{display:none}
+.desk-header .icon{width:17px;height:17px}
+.workspace-picker{display:none}
+main{max-width:1440px;margin:0 auto;padding:24px clamp(16px,3vw,44px) 40px}
+main .intro{margin-bottom:18px;gap:12px}
+main .intro h1{font-size:clamp(25px,3vw,36px);line-height:1.1}
+main .intro p{margin-top:6px;font-size:14px}
+main .eyebrow,.card-kicker{color:var(--green);letter-spacing:.12em}
+.card{border-color:var(--line);border-radius:var(--radius);min-width:0}
+button,select,.transfer-option,.evidence-desk .inspect-btn,.lab-layout .profile-btn{min-height:44px}
+.lab-layout,.design-layout{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);align-items:start;gap:20px}
+.lab-layout>* , .design-layout>* , .policy-layout>*{min-width:0}
+.lab-layout .side-stack,.design-layout .side-stack{display:grid;grid-template-columns:minmax(0,1fr);gap:12px}
+.learning-path{justify-content:flex-start;gap:8px;padding:0;margin:0 0 14px;background:none;border:none}
+.learning-path .path-step{padding:5px 12px;border-radius:20px;font-size:13px}
+.learning-path .current{background:#e4f1db;color:var(--deep)}
+.scenario-head{padding:18px 20px 12px}
+.scenario-head h2{font-size:22px}
+.mail-window{margin:0 18px 14px;border:1px solid var(--line);background:#fcfdf9;border-radius:12px}
+.mail-body{padding:17px 20px}
+.mail-subject{font-size:clamp(17px,1.5vw,23px);line-height:1.3}
+.email-text{font-size:14px}
+.evidence-desk,.desk-options,.design-controls{padding:16px;display:block}
+.evidence-desk h2{font-size:20px;margin:3px 0 10px}
+.evidence-desk .inspectors{display:flex;flex-wrap:wrap;gap:6px;padding:0;border:0}
+.evidence-desk .inspect-btn{background:#eef4e9;padding:7px 9px;border-radius:7px}
+.evidence-empty{padding:12px 0 0;color:var(--sub)}
+.evidence{overflow-wrap:anywhere;margin:10px 0 0}
+.domain-trace{margin-top:10px;padding-left:12px;border-left:2px solid #8bac80;display:grid;gap:8px}
+.domain-trace small,.domain-trace code{display:block}
+.domain-trace code{font-size:13px;overflow-wrap:anywhere}
+.domain-trace mark{background:#ffe4a9;color:#5a3c0c}
+.lab-layout .decision{padding:15px;margin:0}
+.decision .action-grid{display:grid;grid-template-columns:1fr;gap:7px}
+.decision .decision-btn{font-size:14px;justify-content:flex-start;min-height:44px}
+.decision .decision-btn .icon{width:17px}
+.decision .confidence{flex-wrap:wrap}
+.desk-options summary{cursor:pointer;display:list-item;min-height:44px;line-height:44px;font-weight:650}
+.desk-options .mira-guide{margin:0}
+.lab-layout .side-stack .feedback,.lab-layout .side-stack .dda-banner{margin:0}
+.scenario-footer{margin-top:12px}
+.dots .dot-btn{min-width:26px;min-height:44px;background-clip:content-box;padding:14px 5px}
+.warning-console{padding:0 18px 18px}
+.warning-console .profile-options{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+.warning-console .profile-btn{padding:7px;min-height:44px}
+.warning-console .profile-btn small{display:none}
+.compare-control{display:inline-flex;align-items:center;gap:6px;min-height:44px;font-weight:600;font-size:13px}
+.compare-control input{accent-color:var(--green)}
+.warning-console .warning-wrap{margin:8px 0}
+.warning-comparison{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:9px}
+.warning-comparison>div{min-width:0}
+#designExplanation{font-size:13px;margin-top:6px}
+.policy-layout{grid-template-columns:minmax(300px,360px) minmax(0,1fr);gap:20px}
+.policy-controls{position:static}
+.policy-controls .policy-predict{border:1px solid #bbd4b4;background:#f1f6ed;padding:14px;margin:12px 0}
+.policy-controls .policy-predict h2{font-size:19px}
+.policy-ready{padding:25px}
+.policy-ready p{margin-top:7px;color:var(--sub)}
+.lane-preview,.policy-lanes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:14px}
+.lane-preview span,.policy-lane{background:#f1f5ed;border:1px solid var(--line);border-radius:12px;padding:12px;min-width:0}
+.policy-lane.warn-lane{background:#faf4e6;border-color:#e8d9b6}
+.policy-lane h3{display:flex;gap:6px;align-items:center;margin:0 0 8px}
+.policy-lane h3 span{margin-left:auto}
+.policy-lane .policy-message{position:relative;display:grid;grid-template-columns:28px minmax(0,1fr);width:100%;gap:6px;margin-top:5px;padding:8px;min-height:66px;background:#fff;text-align:left}
+.policy-lane .policy-message.selected{background:#e7f1df;border-color:#7ca384}
+.policy-lane .policy-outcome{grid-column:2;justify-self:start;white-space:normal}
+.policy-lane .policy-message-title b{overflow-wrap:anywhere}
+.lane-empty{font-size:13px;color:var(--sub)}
+@media(max-width:1099px){
+ .desk-header{justify-content:space-between;gap:8px}
+ .desk-header nav{display:none}
+ .workspace-picker{display:flex;align-items:center;gap:8px;font-size:13px}
+ .workspace-picker select{max-width:195px;padding:6px 8px;border:1px solid #819b88;border-radius:8px;background:#f8faf2;color:var(--ink)}
+ .lab-layout,.design-layout,.policy-layout,.transfer-layout{grid-template-columns:minmax(0,1fr)}
+ .policy-controls{display:block}
+}
+@media(max-width:600px){
+ .workspace-picker{flex-direction:column;align-items:flex-end;gap:2px}
+ .desk-header .brandname{font-size:18px}
+ .workspace-picker select{max-width:155px}
+ main{padding:17px 12px 30px}
+ main .intro{align-items:flex-start;flex-wrap:wrap}
+ main .intro .outline-btn{font-size:13px}
+ .scenario-head{padding:14px}
+ .mail-window{margin:0 10px 10px}
+ .mail-body{padding:13px}
+ .warning-console{padding:0 10px 12px}
+ .warning-comparison{grid-template-columns:1fr}
+ .warning-console .section-top{flex-wrap:wrap}
+ .policy-lanes{grid-template-columns:minmax(0,1fr)}
+ .scenario-footer{flex-wrap:wrap;gap:6px}
+ .scenario-nav{flex-wrap:wrap}
+ .profile-btn,.transfer-form button,.recall-option{min-height:44px}
+}
+/* Reading hierarchy and evidence markers. */
+.warning-action,.compare-control,.design-controls label,.design-controls select{font-size:15px}
+.policy-control label,.policy-predictions button,.policy-tools button{font-size:15px}
+.policy-control output{font-size:19px}
+.policy-control p,.policy-range-labels,.policy-rule span,.policy-limits{font-size:13px}
+.policy-control input[type=range]{height:44px;margin:0}
+.policy-trace h2{font-size:clamp(22px,2.15vw,28px)}
+.domain-trace .domain-verdict{display:flex;align-items:center;gap:8px;margin-bottom:6px;font-size:15px;font-weight:800}
+.domain-verdict span{display:grid;place-items:center;background:#275942;color:white;border-radius:5px;width:24px;height:24px;font-size:17px}
+.policy-trace .policy-comparison{margin:12px 0 0}
+.policy-trace .policy-comparison>div{gap:6px 12px}
+.policy-trace .policy-comparison span{font-size:14px}
+.policy-trace .policy-comparison strong{font-size:18px}
+.policy-trace .policy-comparison span:nth-child(2){background:#dcebd9}
+.policy-trace .policy-comparison span:nth-child(3){background:#f6e7c9}
+.policy-trace .policy-lanes{margin-top:8px}
+.policy-lane .policy-message.rerouted .policy-id{background:#275942;color:white}
+.policy-board #policyTraceDetail{margin:0 0 16px}
+body{font-size:16px;line-height:1.55}
+main .intro h1{font-size:clamp(30px,4vw,46px);letter-spacing:-.04em}
+main .intro p,.scenario-head p,.email-text,.warning p,.feedback p,.policy-context p,.policy-ready p,.policy-detail p,.transfer-context,#designExplanation{font-size:16px;line-height:1.55}
+main .eyebrow,.card-kicker{font-size:12px}
+main h2,.scenario-head h2{font-size:clamp(22px,2.15vw,28px)}
+main h3,.evidence-desk h2{font-size:20px}
+.mail-subject{font-size:clamp(21px,2.1vw,28px)}
+.sender-data b,.warning strong{font-size:17px}
+.sender-data p,.small,.evidence-empty,.evidence p,.policy-message-title small,.policy-limit-note,.mira-bubble,.confidence{font-size:14px}
+.evidence .mono,.domain-trace code{font-size:15px}
+.domain-trace small,.sim-stamp{font-size:13px}
+.desk-header .navbtn,.evidence-desk .inspect-btn,.warning-console .profile-btn,.decision .decision-btn,.policy-lane .policy-message,.btn,.outline-btn,.soft-btn{font-size:15px}
+.policy-lane .policy-message-title b{font-size:16px}
+.policy-lane .policy-outcome,.reroute-tag{font-size:13px}
+.policy-metric b{font-size:clamp(32px,4vw,48px)}
+.policy-metric span{font-size:15px}
+.policy-metric small{font-size:13px}
+.evidence-caption{margin:0 0 12px;color:var(--sub);font-size:15px}
+.clue-card{border:1px solid #b7ccb0;background:#f5f9ef;padding:13px}
+.clue-heading{display:flex;align-items:center;gap:8px;margin-bottom:6px}
+.clue-number{display:inline-grid;place-items:center;min-width:29px;min-height:25px;border-radius:6px;background:#28583f;color:white;font:700 13px ui-monospace,monospace;flex:none}
+.evidence-source.is-inspected{outline:2px solid #7aa16e;outline-offset:4px}
+.evidence-source:focus-visible{outline:3px solid #276843;outline-offset:5px}
+.clue-source-btn{display:inline-flex;align-items:center;gap:6px;margin-top:8px;background:transparent;border:0;color:var(--green);text-decoration:underline;text-underline-offset:3px;padding:4px 0;min-height:44px;font-size:15px;font-weight:700}
+.routing-summary{display:grid;gap:3px;margin:12px 0;padding:12px 15px;border-left:3px solid #6b9566;background:#edf4e7;font-size:15px}
+.routing-summary span{color:var(--sub);font-size:14px}
+.policy-quick-run{width:100%;margin:8px 0 0;text-align:left;border-color:#9cbd8d;background:#e4f0dc}
+.policy-lane .policy-message.rerouted{border:2px solid #6b9566;background:#edf6e7}
+.reroute-tag{grid-column:2;color:#315e39;font-weight:700}
+@media(min-width:1100px){.policy-controls{position:sticky;top:12px;max-height:calc(100vh - 24px);overflow:auto}}
+@media(max-width:600px){
+ .desk-header .brandname{font-size:17px}
+ .warning-console .profile-btn,.evidence-desk .inspect-btn{font-size:14px}
+ .policy-metrics{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .learning-path .path-step{font-size:13px}
+ .mail-body .email-link{max-width:100%;white-space:normal}
+}
+
+/* Case illustrations sit beside the context, outside the simulated message. */
+.scenario-head.illustrated{display:grid;grid-template-columns:minmax(0,1fr) clamp(116px,13vw,186px);gap:14px;align-items:center}
+.case-art,.routing-art{display:block;width:100%;height:auto}
+.routing-art{max-width:640px;margin:16px auto 0}
+@media(max-width:600px){
+ .scenario-head.illustrated{grid-template-columns:minmax(0,1fr) 88px;gap:8px}
+ .scenario-head.illustrated .scenario-copy{display:contents}
+ .scenario-head.illustrated h2,.scenario-head.illustrated p{grid-column:1/-1;margin-top:0}
+ .scenario-head.illustrated .case-art{grid-column:2;grid-row:1}
+ .routing-art{margin-top:12px}
+}
+
+.transfer-heading.scenario-head{padding:0;margin:0 0 16px}
+.transfer-heading .transfer-context{margin:6px 0 0}
+.source-heading{display:grid;grid-template-columns:minmax(0,1fr) clamp(86px,11vw,138px);align-items:center;gap:12px;margin-bottom:8px}
+.transfer-launch.illustrated-launch{display:grid;grid-template-columns:clamp(92px,12vw,148px) minmax(0,1fr) auto;align-items:center}
+@media(max-width:660px){
+ .transfer-launch.illustrated-launch{grid-template-columns:minmax(0,1fr) 88px;gap:12px}
+ .illustrated-launch .case-art{grid-column:2;grid-row:1}
+ .illustrated-launch .btn{grid-column:1/-1;justify-self:start}
+}
+</style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 <div class="app">
- <aside class="sidebar">
+ <header class="desk-header">
   <div><div class="brand"><span class="brandmark" data-icon="shield"></span><span class="brandname">SignalLab<span style="color:#7c936c">.</span></span></div><div class="brand-sub">The human side of security</div></div>
-  <div class="nav-title">YOUR WORKSPACE</div>
+
   <nav aria-label="Main navigation">
    <button class="navbtn active" data-view="simulation" title="Simulation"><span data-icon="layers"></span><span class="navlabel">Simulation</span><span class="navbadge">6</span></button>
    <button class="navbtn" data-view="design" title="Design lab"><span data-icon="sliders"></span><span class="navlabel">Design lab</span></button>
@@ -38,10 +222,18 @@
    <button class="navbtn" data-view="report" title="Learning report"><span data-icon="chart"></span><span class="navlabel">Learning report</span></button>
    <button class="navbtn" data-view="research" title="Research & guide"><span data-icon="book"></span><span class="navlabel">Research & guide</span></button>
   </nav>
-  <div class="sidebar-bottom"><div class="course-card"><span class="pill">LEARNING SIMULATOR</span><b>Cybersecurity × HCI</b><p class="muted">Built for curious minds.<br>Designed for safer decisions.</p></div><div class="local-note"><span data-icon="lock"></span> Progress stays on this device</div></div>
- </aside>
+  <label class="workspace-picker">Workspace
+    <select id="workspacePicker">
+      <option value="simulation">Simulation</option>
+      <option value="design">Design Lab</option>
+      <option value="policy">Warning Policy</option>
+      <option value="transfer">Transfer Check</option>
+      <option value="report">Learning Report</option>
+      <option value="research">Research &amp; Guide</option>
+    </select>
+  </label>
+ </header>
  <div class="workspace">
-  <header class="topbar"><div class="breadcrumb">Learning workspace <span aria-hidden="true">/</span> <b id="breadcrumb">Simulation</b></div><div class="top-right"><span><i class="status-dot"></i> Interactive learning</span><div class="avatar" aria-label="Student workspace">ST</div></div></header>
   <div class="storage-notice" id="storageNotice" hidden>Browser storage is unavailable. You can still practise and export this session, but progress will not survive a reload.</div>
   <main id="main" tabindex="-1"></main>
  </div>
@@ -78,30 +270,234 @@ function persist(){try{localStorage.setItem(KEY,JSON.stringify(data))}catch{stor
 function lastAttempt(id){return data.attempts.filter(a=>a.id===id).at(-1)||null}
 function firstAttempts(){const seen=new Set();return data.attempts.filter(a=>{if(seen.has(a.id))return false;seen.add(a.id);return true})}
 function stats(){const a=firstAttempts();return {done:a.length,correct:a.filter(x=>x.correct).length,accuracy:a.length?Math.round(a.filter(x=>x.correct).length/a.length*100):null,average:a.length?a.reduce((n,x)=>n+x.seconds,0)/a.length:null}}
-function setView(v){if(v!==view)inspected={sender:false,url:false};if(view==='simulation'&&v!=='simulation'&&pauseStart===null)pauseStart=performance.now();if(view!=='simulation'&&v==='simulation'&&pauseStart!==null&&!document.hidden){pausedMs+=performance.now()-pauseStart;pauseStart=null}view=v;try{history.replaceState(null,'','#'+v)}catch{}document.querySelectorAll('[data-view]').forEach(b=>{b.classList.toggle('active',b.dataset.view===v);if(b.dataset.view===v)b.setAttribute('aria-current','page');else b.removeAttribute('aria-current')});document.getElementById('breadcrumb').textContent={simulation:'Simulation',design:'Design lab',policy:'Warning policy',transfer:'Transfer check',report:'Learning report',research:'Research & guide'}[v];render();window.scrollTo({top:0,behavior:'instant'});main.focus({preventScroll:true})}
+function setView(v){if(v!==view){inspected={sender:false,url:false};compareMinimal=false;}if(view==='simulation'&&v!=='simulation'&&pauseStart===null)pauseStart=performance.now();if(view!=='simulation'&&v==='simulation'&&pauseStart!==null&&!document.hidden){pausedMs+=performance.now()-pauseStart;pauseStart=null}view=v;try{history.replaceState(null,'','#'+v)}catch{}document.querySelectorAll('[data-view]').forEach(b=>{b.classList.toggle('active',b.dataset.view===v);if(b.dataset.view===v)b.setAttribute('aria-current','page');else b.removeAttribute('aria-current')});document.getElementById('workspacePicker').value=v;render();window.scrollTo({top:0,behavior:'instant'});main.focus({preventScroll:true})}
 function miraAvatar(){return `<svg viewBox="0 0 64 80" role="img" aria-label="Mira, campus inbox guide"><path d="M7 80Q6 54 32 54Q58 54 57 80" fill="#325f45"/><path d="M13 34Q9 5 32 5Q56 5 51 48L48 62H16Z" fill="#778d61"/><ellipse cx="32" cy="31" rx="15" ry="19" fill="#ebc9a4"/><circle cx="27" cy="30" r="2" fill="#29382e"/><circle cx="38" cy="30" r="2" fill="#29382e"/><path d="M27 40Q32 45 38 40" fill="none" stroke="#29382e" stroke-width="2"/></svg>`}
 function miraGuide(text){return `<aside class="mira-guide" aria-label="Mira’s explanation">${miraAvatar()}<div class="mira-bubble"><b>Mira · Campus inbox guide</b><span>${text}</span></div></aside>`}
 function intro(eyebrow,title,description,button=''){return `<div class="intro"><div><div class="eyebrow">${eyebrow}</div><h1>${title}</h1><p>${description}</p></div>${button}</div>`}
 function profileButtons(){return `<div class="profile-options">${Object.entries(profiles).map(([key,p])=>`<button class="profile-btn" data-profile="${key}" aria-pressed="${data.profile===key}"><span class="radio" aria-hidden="true"></span><span><b>${p.label}</b><small>${p.desc}</small></span></button>`).join('')}</div>`}
 function toggleHTML(){return `<div class="toggle-line"><span>Show full sender inline</span><label class="switch"><input type="checkbox" id="inlineToggle" aria-label="Show full sender inline" ${data.inline?'checked':''}><span aria-hidden="true"></span></label></div>`}
-function emailHTML(s,lab=false){return `<div class="mail-window"><div class="mail-toolbar"><div class="window-dots" aria-hidden="true"><i></i><i></i><i></i></div><div class="mail-app">${icon('mail')} Student inbox <span class="layout-badge">Simulation</span></div><span>1 message</span></div><div class="mail-body"><div class="mail-subject">${s.subject}</div><div class="sender-row"><div class="sender-avatar">${s.initials}</div><div class="sender-data"><b>${s.sender}</b><p>${data.inline?`<span class="mono">${esc(s.email)}</span>`:'to me · sender details hidden'}</p></div><span class="mail-date">${s.time}</span></div><div class="email-text"><p>${s.greeting}</p><p>${s.body}</p><button class="email-link" data-inspect="url" aria-expanded="${inspected.url}">${s.button} ${icon('external')}</button><p>${s.signature}</p><p class="sim-stamp">Fictional teaching message · message buttons reveal evidence only</p></div><div class="inspectors"><button class="inspect-btn" data-inspect="sender" aria-expanded="${inspected.sender}">${icon('eye')} ${inspected.sender?'Hide':'Inspect'} sender</button><button class="inspect-btn" data-inspect="url" aria-expanded="${inspected.url}">${icon('link')} ${inspected.url?'Hide':'Inspect'} destination</button></div>${inspected.sender?`<div class="evidence"><b>Actual sender address</b><span class="mono">${s.email}</span><div>Display names and sender addresses alone do not authenticate a message.</div></div>`:''}${inspected.url?`<div class="evidence"><b>Actual link destination · preview only</b><span class="mono">${s.url}</span><div>This fictional link is never opened.</div></div>`:''}</div></div>`}
-function warningHTML(s){const p=data.profile;return `<div class="warning-wrap"><div class="warning ${p==='minimal'?'minimal':''} ${s.answer==='continue'&&p!=='minimal'?'neutral':''}">${icon(p==='minimal'?'info':'shield')}<div><strong>${p==='minimal'?s.minimal:s.clear}</strong>${p!=='minimal'?`<p>${s.detail}</p>`:''}${p==='actionable'?`<span class="warning-action">${s.safe}</span>`:''}</div></div></div>`}
+// Editorial spot illustrations depict the topic of each case.
+const caseArtwork={
+  account:`<rect x="72" y="36" width="67" height="49" rx="7" fill="#e0edcc"/><path d="M72 49h67m-57-6h1m7 0h1" />
+    <path d="M98 64v-4a8 8 0 0 1 16 0v4" /><rect x="94" y="63" width="24" height="15" rx="4" fill="#f9e4a8"/><path d="M106 69v3"/>`,
+  library:`<path d="M79 44q12-8 29 1 16-9 29-1v37q-13-6-29 1-17-7-29-1Z" fill="#e0edcc"/>
+    <path d="M108 46v35M86 53q8-3 15 0m-15 8q8-3 15 0m14-8q8-3 15 0" /><path d="M118 43v22l4-4 5 4V42" fill="#f9e4a8"/>`,
+  grant:`<path d="M86 36h34l11 11v38H86Z" fill="#e0edcc"/><path d="M120 36v12h11M94 52h18m-18 8h13m-13 8h13"/>
+    <circle cx="121" cy="70" r="12" fill="#f9e4a8"/><path d="m121 64 2 4 5 1-4 3 1 5-4-2-4 2 1-5-4-3 5-1Z" fill="#fff9e8" stroke-width="1.4"/>`,
+  timetable:`<rect x="81" y="39" width="54" height="45" rx="6" fill="#e0edcc"/><path d="M81 52h54M94 34v10m28-10v10"/>
+    <path d="M93 61h7m7 0h7m7 0h6M93 73h7m7 0h7"/><rect x="118" y="68" width="12" height="10" rx="2" fill="#f9e4a8"/>`,
+  research:`<path d="M96 38h26m-19 0v20L90 76a5 5 0 0 0 4 8h31a5 5 0 0 0 4-8l-13-18V38" fill="#e0edcc"/>
+    <path d="M99 66h21l9 10a5 5 0 0 1-4 8H94a5 5 0 0 1-4-8Z" fill="#f9e4a8"/><circle cx="106" cy="75" r="2"/><circle cx="117" cy="78" r="2"/>`,
+  subdomain:`<rect x="79" y="36" width="58" height="44" rx="6" fill="#e0edcc"/><path d="M79 48h58m-50-6h1m7 0h1m-8 15h27m-27 8h12"/>
+    <circle cx="119" cy="69" r="10" fill="#f9e4a8"/><path d="m127 76 11 11" stroke-width="4"/>`,
+  storage:`<path d="M88 73a10 10 0 0 1-1-20 15 15 0 0 1 28-6 13 13 0 0 1 19 12 10 10 0 0 1-3 14Z" fill="#e0edcc"/>
+    <rect x="97" y="63" width="28" height="21" rx="4" fill="#f9e4a8"/><path d="M98 73h26m-7-5h2m-2 10h2"/>`,
+  room:`<rect x="78" y="36" width="60" height="47" rx="5" fill="#e0edcc"/><path d="M92 36v16h-14m44 31V64h16"/>
+    <rect x="99" y="51" width="20" height="16" rx="3" fill="#f9e4a8"/><path d="M103 47h12m-12 24h12m-21-16v8m30-8v8"/>`,
+  placement:`<path d="M99 49v-7h18v7" /><rect x="80" y="49" width="56" height="33" rx="5" fill="#e0edcc"/>
+    <path d="M80 57q28 19 56 0"/><rect x="102" y="62" width="12" height="10" rx="2" fill="#f9e4a8"/>`,
+  notebook:`<rect x="36" y="20" width="79" height="66" rx="6" fill="#fffdf3"/>
+    <path d="M51 21v64m-21-50h13m-13 16h13m-13 16h13M64 36h27m-27 9h36m-36 9h18m-18 10h12"/>
+    <rect x="87" y="55" width="47" height="36" rx="5" fill="#e0edcc"/><path d="M96 80V70m9 10V64m9 16V70m9 10V63" stroke-width="3"/>`,
+  cues:`<path d="M37 23h57l13 13v50H37Z" fill="#fffdf3"/><path d="M94 23v14h13m-58 3h25m-25 12h36m-36 12h21m-21 11h29"/>
+    <circle cx="109" cy="58" r="21" fill="#e0edcc"/><path d="m124 73 14 14" stroke-width="7"/><path d="m100 57 6 6 12-12"/>`,
+  warnings:`<rect x="33" y="28" width="79" height="48" rx="7" fill="#fffdf3"/><path d="M33 39h79m-70-5h1m6 0h1m-7 15h26m-26 9h16"/>
+    <rect x="66" y="47" width="66" height="36" rx="6" fill="#f9e4a8"/><path d="m83 54 9 18H74Zm0 6v5m0 3h.1m15-11h24m-24 8h18m-18 8h12"/>`
+};
+function caseArt(id,withEnvelope=true){
+  return `<svg class="case-art" viewBox="0 0 166 108" aria-hidden="true" focusable="false">
+    <rect x="1" y="1" width="164" height="106" rx="12" fill="#eaf0df" stroke="#bdcbb1"/>
+    <path d="M14 27h138M14 54h138M14 81h138M28 13v82M55 13v82M82 13v82M109 13v82M136 13v82" stroke="#d7e1ce"/>
+    <path d="M13 23v-9h10m120 0h10v9M13 85v9h10m120 0h10v-9" stroke="#62816a" stroke-width="2" fill="none"/>
+    <g fill="none" stroke="#315c45" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      ${withEnvelope?`<g transform="rotate(-11 49 61)"><rect x="24" y="43" width="53" height="36" rx="5" fill="#fffdf3"/><path d="m25 47 25 17 26-17M26 76l15-12m35 12L60 65"/></g>`:''}
+      ${caseArtwork[id]}
+    </g>
+    <path d="M34 30h16m-16-5h9m106 42h5m-2.5-2.5v5" stroke="#62816a" stroke-width="1.5" stroke-linecap="round"/>
+  </svg>`;
+}
+function routingArt(){
+  return `<svg class="routing-art" viewBox="0 0 480 142" aria-hidden="true" focusable="false">
+    <rect x="1" y="1" width="478" height="140" rx="16" fill="#eff3e8" stroke="#cad7c4"/>
+    <g fill="none" stroke="#517960" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M126 71h76m76 0h30q12 0 12-12V43q0-8 9-8h26m-47 36q12 0 12 12v16q0 8 9 8h26" stroke-dasharray="4 6"/>
+      <path d="m352 30 6 5-6 5m0 62 6 5-6 5"/>
+      <g transform="rotate(-12 77 72)"><rect x="41" y="43" width="72" height="50" rx="6" fill="#dce8d2"/></g>
+      <rect x="59" y="53" width="72" height="50" rx="6" fill="#fffdf3"/><path d="m61 57 34 24 34-24M61 100l23-19m45 19-23-19"/>
+      <rect x="204" y="41" width="73" height="60" rx="12" fill="#275942" stroke="none"/>
+      <path d="M220 58h41m-41 13h41m-41 13h41" stroke="#d6ebc6"/>
+      <circle cx="233" cy="58" r="3" fill="#d6ebc6" stroke="#d6ebc6"/><circle cx="249" cy="71" r="3" fill="#f8dfa0" stroke="#f8dfa0"/><circle cx="233" cy="84" r="3" fill="#d6ebc6" stroke="#d6ebc6"/>
+      <rect x="365" y="14" width="79" height="43" rx="7" fill="#f6e6bc"/><path d="m404 23 12 24h-24Zm0 8v6m0 4h.1"/>
+      <rect x="365" y="85" width="79" height="43" rx="7" fill="#dce8d2"/><path d="M393 106h23m-8-7 8 7-8 7"/>
+    </g>
+  </svg>`;
+}
+function emailHTML(s){
+  return `<article class="mail-window" aria-label="Fictional campus email"><div class="mail-body">
+    <div class="mail-subject">${s.subject}</div>
+    <div class="sender-row evidence-source ${inspected.sender?'is-inspected':''}" data-evidence-source="sender" tabindex="-1">
+      <div class="sender-avatar" aria-hidden="true">${s.initials}</div>
+      <div class="sender-data"><b>${s.sender}</b><p>${data.inline?`<span class="mono">${esc(s.email)}</span>`:'Display name · address available in evidence'}</p></div>
+      <span class="mail-date">${s.time}</span>${inspected.sender?clueBadge("sender"):""}
+    </div>
+    <div class="email-text"><p>${s.greeting}</p><p>${s.body}</p>
+      <button class="email-link evidence-source ${inspected.url?'is-inspected':''}" data-inspect="url" data-evidence-source="url" aria-controls="evidenceEntries" aria-expanded="${inspected.url}">${s.button} ${icon('link')}${inspected.url?clueBadge("url"):""}</button>
+      <p>${s.signature}</p><p class="sim-stamp">Fictional teaching message · buttons reveal evidence</p>
+    </div>
+  </div></article>`;
+}
+const knownHosts={account:'campus.example',library:'library.campus.example',timetable:'timetable.campus.example',subdomain:'portal.campus.example'};
+let compareMinimal=false;
+function clueBadge(kind){
+  return `<span class="clue-number" aria-label="Clue ${kind==='sender'?1:2}">${kind==='sender'?'01':'02'}</span>`;
+}
+function clueHeading(kind,label){
+  return `<div class="clue-heading">${clueBadge(kind)}<b>${label}</b></div>`;
+}
+function clueSourceButton(kind){
+  return `<button type="button" class="clue-source-btn" data-locate-clue="${kind}">${icon('back')} Locate in email</button>`;
+}
+function destinationEvidence(s){
+  const known=knownHosts[s.id];
+  const actual=new URL(s.url).hostname;
+  let hostname=esc(actual);
+  if(known&&actual!==known){
+    let prefix=0,suffix=0;
+    while(prefix<known.length&&prefix<actual.length&&known[prefix]===actual[prefix])prefix++;
+    while(suffix<known.length-prefix&&suffix<actual.length-prefix&&known.at(-1-suffix)===actual.at(-1-suffix))suffix++;
+    hostname=esc(actual.slice(0,prefix))+'<mark>'+esc(actual.slice(prefix,actual.length-suffix))+'</mark>'+esc(actual.slice(actual.length-suffix));
+  }
+  return `<div class="evidence clue-card" data-clue="url">${clueHeading("url","Actual link destination")}<span class="mono">${esc(s.url)}</span>
+    ${view==='design'?`<div class="domain-trace">${known?
+      `<div class="domain-verdict"><span aria-hidden="true">${actual===known?'✓':'≠'}</span> ${actual===known?'Matching hostnames':'Different hostnames'}</div><div><small>Known service</small><code>${esc(known)}</code></div>
+       <div><small>Link hostname</small><code>${hostname}</code></div>
+       <p>${actual===known?'The hostnames match. Check the task context as well.':'Read the full hostname before trusting a familiar word.'}</p>`:
+      `<div><small>Link hostname</small><code>${esc(actual)}</code></div><p>${s.id==='grant'?'Check the saved application portal for the stated fee policy.':'Confirm the platform with your lecturer through a known contact.'}</p>`}</div>`:''}
+    ${clueSourceButton('url')}
+  </div>`;
+}
+function evidenceHTML(s){
+  return `<section class="card evidence-desk" aria-label="Evidence desk">
+    <div class="card-kicker">EVIDENCE LENS</div><h2>Follow the clues</h2><p class="evidence-caption">Open a clue, then find its matching number in the email.</p>
+    <div class="inspectors">
+      <button class="inspect-btn" data-inspect="sender" aria-controls="evidenceEntries" aria-expanded="${inspected.sender}">${icon('eye')} ${inspected.sender?'Hide':'Inspect'} sender</button>
+      <button class="inspect-btn" data-inspect="url" aria-controls="evidenceEntries" aria-expanded="${inspected.url}">${icon('link')} ${inspected.url?'Hide':'Inspect'} destination</button>
+    </div>
+    <div id="evidenceEntries" aria-live="polite">
+      ${inspected.sender?`<div class="evidence clue-card" data-clue="sender">${clueHeading("sender","Actual sender address")}<span class="mono">${esc(s.email)}</span><p>Compare this address with the task context.</p>${clueSourceButton("sender")}</div>`:''}
+      ${inspected.url?destinationEvidence(s):''}
+      ${!inspected.sender&&!inspected.url?'<p class="evidence-empty">Inspect the sender or destination to add a clue.</p>':''}
+    </div>
+  </section>`;
+}
+function learningSteps(){
+  const current=currentAnswer?'Explain':everInspected.sender||everInspected.url?'Decide':'Inspect';
+  return `<div class="learning-path" aria-label="Learning process">${['Inspect','Decide','Explain'].map((label,i)=>
+    `<div class="path-step ${current===label?'current':''}" ${current===label?'aria-current="step"':''}><span>${i+1}</span> ${label}</div>`).join('')}</div>`;
+}
+function warningHTML(s,p=data.profile){return `<div class="warning-wrap"><div class="warning ${p==='minimal'?'minimal':''} ${s.answer==='continue'&&p!=='minimal'?'neutral':''}">${icon(p==='minimal'?'info':'shield')}<div><strong>${p==='minimal'?s.minimal:s.clear}</strong>${p!=='minimal'?`<p>${s.detail}</p>`:''}${p==='actionable'?`<span class="warning-action">${s.safe}</span>`:''}</div></div></div>`}
 function feedbackHTML(s){if(!currentAnswer)return '';const a=currentAnswer;return `<div class="feedback ${a.correct?'':'retry'}" role="status"><h3>${a.correct?'✓ Best supported by this scenario':decisionGrade(s,a.action)==='alternative'?'✓ A cautious alternative':'↗ Pause before following this request'}</h3><p>${decisionGrade(s,a.action)==='alternative'?'Your action keeps you from following an unverified request. It is a cautious alternative, not an unsafe choice. The preferred action below is more proportionate to the stated evidence. ':''}${s.why}</p><div class="result-meta"><span>Your choice: ${actions[a.action].label}</span><span>${a.seconds.toFixed(1)}s</span><span>${esc(a.confidence)} confidence</span></div><p><b>Evidence:</b> ${s.cue}</p><div class="hci"><b>HCI connection</b><p>${s.hci}</p></div><button class="soft-btn" id="retryScenario">${icon('refresh')} Try this scenario again</button></div>`}
-function renderSimulation(){const s=scenarios[data.index],st=stats(),allDone=st.done===6;main.innerHTML=intro('Cybersecurity × Human–Computer Interaction','Pause. Inspect. Decide.','A convincing message. A split-second decision. Discover how interface design can help you see the signals.',`<button class="outline-btn" id="openGuide">${icon('info')} How it works</button>`)+`<div class="learning-path" aria-label="Learning process"><div class="path-step current"><span>1</span> Explore the message</div><div class="path-line"></div><div class="path-step ${currentAnswer?'':'current'}"><span>2</span> Make a decision</div><div class="path-line"></div><div class="path-step ${currentAnswer?'current':''}"><span>3</span> Understand the why</div></div><div class="lab-layout"><section class="card" aria-label="Scenario simulator">${reviewMode?`<div class="review-banner"><span>Reviewing ${reviewPos+1} of ${reviewQueue.length} missed scenarios</span><button class="text-button" id="exitReview">Exit review</button></div>`:''}<div class="scenario-head"><div class="scenario-kicker"><span class="scenario-counter">Scenario ${String(data.index+1).padStart(2,'0')} / 06</span><span class="pill">${levelNames[s.level]}</span></div><h2>${s.title}</h2><p>${s.context}</p></div><div class="scenario-progress"><span style="width:${(data.index+1)/6*100}%"></span></div>${emailHTML(s)}${warningHTML(s)}<div class="decision"><h3>What is the best next action?</h3><p class="help">Follow the action requested in this message, check via a known contact, or report it for investigation.</p><div class="action-grid">${Object.entries(actions).map(([key,a])=>`<button class="decision-btn ${data.profile==='actionable'&&key===s.answer?'recommended':''} ${currentAnswer?.action===key?'selected':''}" data-answer="${key}" ${currentAnswer?'disabled':''}>${icon(a.icon)} ${a.label}</button>`).join('')}</div><div class="confidence"><label for="confidence">How confident are you?</label><select id="confidence" ${currentAnswer?'disabled':''}><option value="low" ${(currentAnswer?.confidence||confidence)==='low'?'selected':''}>Still unsure</option><option value="medium" ${(currentAnswer?.confidence||confidence)==='medium'?'selected':''}>Fairly confident</option><option value="high" ${(currentAnswer?.confidence||confidence)==='high'?'selected':''}>Very confident</option></select><span>${currentAnswer?'Decision recorded':'No rush. Check the evidence.'}</span></div></div>${feedbackHTML(s)}${ddaHTML()}<div class="scenario-footer"><div class="scenario-nav"><button class="text-button" id="previous" ${data.index===0?'disabled':''}>${icon('back')} Back</button><div class="dots" aria-label="Select a scenario">${scenarios.map((x,i)=>`<button class="dot-btn ${lastAttempt(x.id)?'done':''} ${data.index===i?'current':''}" data-jump="${i}" aria-label="Scenario ${i+1}: ${esc(x.title)}" ${i===data.index?'aria-current="step"':''}></button>`).join('')}</div></div><button class="btn next-btn" id="next" ${!currentAnswer?'disabled':''}>${reviewMode&&reviewPos===reviewQueue.length-1?'Finish review':!reviewMode&&data.index===5?'View report':'Next scenario'} ${icon('arrow')}</button></div></section><aside class="side-stack" aria-label="Learning tools"><section class="card design-card"><div class="card-kicker">YOUR EXPERIMENT</div><h3>Change the interface</h3><p>Same situation. Different support.<br>What becomes easier to notice?</p>${profileButtons()}${toggleHTML()}</section><section class="mentor"><div class="mentor-title"><span class="mentor-avatar">${miraAvatar()}</span> A note from Mira</div><p>${s.mentor} (${s.principle})</p><span class="tag">${s.principle}</span></section><section class="card stat-card"><div class="mini-stats"><div class="mini-stat"><b>${String(st.done).padStart(2,'0')}<span style="font-size:13px;color:#89967e"> / 06</span></b><span>Scenarios explored</span></div><div class="mini-stat"><b>${st.accuracy===null?'—':st.accuracy+'<span style="font-size:13px">%</span>'}</b><span>Preferred-action match</span></div></div><div class="progress-track"><span style="width:${st.done/6*100}%"></span></div><p>${allDone?'All scenarios explored. Open your report to reflect.':'Guided practice · cautious alternatives stay safe.'}</p></section></aside></div><div class="bottom-note"><span>${icon('lock')} A safe sandbox: fictional messages, no real sign-ins.</span><span>Learn the principle. Take it into the real world.</span></div>`;bindCommon();main.querySelector('#openGuide').onclick=()=>document.getElementById('guide').showModal();main.querySelectorAll('[data-answer]').forEach(b=>b.onclick=()=>answer(b.dataset.answer));main.querySelector('#confidence').onchange=e=>confidence=e.target.value;main.querySelector('#previous').onclick=()=>goScenario(data.index-1);main.querySelector('#next').onclick=()=>{if(reviewMode){if(reviewPos+1<reviewQueue.length){reviewPos++;goScenario(reviewQueue[reviewPos],true,true)}else{reviewMode=false;setView('report')}}else if(data.index===5)setView('report');else goScenario(data.index+1)};const retry=main.querySelector('#retryScenario');if(retry)retry.onclick=()=>{currentAnswer=null;inspected={sender:false,url:false};everInspected={sender:false,url:false};resetTimer();render()};const exit=main.querySelector('#exitReview');if(exit)exit.onclick=()=>{reviewMode=false;render()}}
+function renderSimulation(){const s=scenarios[data.index];main.innerHTML=intro('Cybersecurity × Human–Computer Interaction','Pause. Inspect. Decide.','Check the evidence and decide what to do with a campus message.',`<button class="outline-btn" id="openGuide">${icon('info')} How it works</button>`)+`${learningSteps()}<div class="lab-layout"><section class="card" aria-label="Scenario simulator">${reviewMode?`<div class="review-banner"><span>Reviewing ${reviewPos+1} of ${reviewQueue.length} missed scenarios</span><button class="text-button" id="exitReview">Exit review</button></div>`:''}<div class="scenario-head illustrated"><div class="scenario-copy"><div class="scenario-kicker"><span class="scenario-counter">Scenario ${String(data.index+1).padStart(2,'0')} / 06</span><span class="pill">${levelNames[s.level]}</span></div><h2>${s.title}</h2><p>${s.context}</p></div>${caseArt(s.id)}</div><div class="scenario-progress"><span style="width:${(data.index+1)/6*100}%"></span></div>${emailHTML(s)}${warningHTML(s)}</section><aside class="side-stack" aria-label="Evidence and decision">${evidenceHTML(s)}<div class="card decision"><h3>What is the best next action?</h3><p class="help">Follow the action requested in this message, check via a known contact, or report it for investigation.</p><div class="action-grid">${Object.entries(actions).map(([key,a])=>`<button class="decision-btn ${data.profile==='actionable'&&key===s.answer?'recommended':''} ${currentAnswer?.action===key?'selected':''}" data-answer="${key}" ${currentAnswer?'disabled':''}>${icon(a.icon)} ${a.label}</button>`).join('')}</div><div class="confidence"><label for="confidence">How confident are you?</label><select id="confidence" ${currentAnswer?'disabled':''}><option value="low" ${(currentAnswer?.confidence||confidence)==='low'?'selected':''}>Still unsure</option><option value="medium" ${(currentAnswer?.confidence||confidence)==='medium'?'selected':''}>Fairly confident</option><option value="high" ${(currentAnswer?.confidence||confidence)==='high'?'selected':''}>Very confident</option></select><span>${currentAnswer?'Decision recorded':'No rush. Check the evidence.'}</span></div></div>${feedbackHTML(s)}${ddaHTML()}<details class="card desk-options" id="interfaceOptions"><summary>Interface settings</summary>${profileButtons()}${toggleHTML()}</details><details class="card desk-options" id="miraOptions"><summary>Ask Mira for a hint</summary>${miraGuide(`${s.mentor} (${s.principle})`)}</details></aside></div><div class="card scenario-footer"><div class="scenario-nav"><button class="text-button" id="previous" ${data.index===0?'disabled':''}>${icon('back')} Back</button><div class="dots" aria-label="Select a scenario">${scenarios.map((x,i)=>`<button class="dot-btn ${lastAttempt(x.id)?'done':''} ${data.index===i?'current':''}" data-jump="${i}" aria-label="Scenario ${i+1}: ${esc(x.title)}" ${i===data.index?'aria-current="step"':''}></button>`).join('')}</div></div><button class="btn next-btn" id="next" ${!currentAnswer?'disabled':''}>${reviewMode&&reviewPos===reviewQueue.length-1?'Finish review':!reviewMode&&data.index===5?'View report':'Next scenario'} ${icon('arrow')}</button></div><div class="bottom-note"><span>${icon('lock')} A safe sandbox: fictional messages, no real sign-ins.</span><span>Learn the principle. Take it into the real world.</span></div>`;bindCommon();main.querySelector('#openGuide').onclick=()=>document.getElementById('guide').showModal();main.querySelectorAll('[data-answer]').forEach(b=>b.onclick=()=>answer(b.dataset.answer));main.querySelector('#confidence').onchange=e=>confidence=e.target.value;main.querySelector('#previous').onclick=()=>goScenario(data.index-1);main.querySelector('#next').onclick=()=>{if(reviewMode){if(reviewPos+1<reviewQueue.length){reviewPos++;goScenario(reviewQueue[reviewPos],true,true)}else{reviewMode=false;setView('report')}}else if(data.index===5)setView('report');else goScenario(data.index+1)};const retry=main.querySelector('#retryScenario');if(retry)retry.onclick=()=>{currentAnswer=null;inspected={sender:false,url:false};everInspected={sender:false,url:false};resetTimer();render()};const exit=main.querySelector('#exitReview');if(exit)exit.onclick=()=>{reviewMode=false;render()}}
 function resetTimer(){startedAt=performance.now();pausedMs=0;pauseStart=document.hidden?performance.now():null}
 function goScenario(i,preserveReview=false,retry=false){if(!Number.isInteger(i)||i<0||i>=6)return;if(!preserveReview)reviewMode=false;data.index=i;inspected={sender:false,url:false};everInspected={sender:false,url:false};confidence='medium';currentAnswer=retry?null:lastAttempt(scenarios[i].id);resetTimer();persist();render();main.querySelector('.scenario-head h2')?.setAttribute('tabindex','-1');main.querySelector('.scenario-head h2')?.focus({preventScroll:true})}
-function answer(action){if(currentAnswer||!Object.hasOwn(actions,action))return;const s=scenarios[data.index];const excluded=pausedMs+(pauseStart===null?0:performance.now()-pauseStart);const seconds=Math.round(Math.max(0,performance.now()-startedAt-excluded)/100)/10;const a={id:s.id,action,correct:action===s.answer,seconds,confidence,profile:data.profile,inline:data.inline,inspected:{...everInspected},grade:decisionGrade(s,action),assisted:true,at:new Date().toISOString()};data.attempts.push(a);currentAnswer=a;persist();render();main.querySelector('.feedback')?.scrollIntoView({behavior:'smooth',block:'nearest'})}
-function bindCommon(){hydrateIcons(main);main.querySelectorAll('[data-profile]').forEach(b=>b.onclick=()=>{data.profile=b.dataset.profile;persist();render()});const toggle=main.querySelector('#inlineToggle');if(toggle)toggle.onchange=e=>{data.inline=e.target.checked;persist();render()};main.querySelectorAll('[data-inspect]').forEach(b=>b.onclick=()=>{inspected[b.dataset.inspect]=!inspected[b.dataset.inspect];if(view==='simulation'&&inspected[b.dataset.inspect])everInspected[b.dataset.inspect]=true;render()});main.querySelectorAll('[data-jump]').forEach(b=>b.onclick=()=>goScenario(Number(b.dataset.jump)))}
+function answer(action){if(currentAnswer||!Object.hasOwn(actions,action))return;const s=scenarios[data.index];const excluded=pausedMs+(pauseStart===null?0:performance.now()-pauseStart);const seconds=Math.round(Math.max(0,performance.now()-startedAt-excluded)/100)/10;const a={id:s.id,action,correct:action===s.answer,seconds,confidence,profile:data.profile,inline:data.inline,inspected:{...everInspected},grade:decisionGrade(s,action),assisted:true,at:new Date().toISOString()};data.attempts.push(a);currentAnswer=a;persist();render();
+  const feedback=main.querySelector('.feedback');
+  feedback.tabIndex=-1;
+  feedback.focus({preventScroll:true});
+  feedback.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth',block:'nearest'});
+}
+function bindCommon(){hydrateIcons(main);main.querySelectorAll('[data-profile]').forEach(b=>b.onclick=()=>{data.profile=b.dataset.profile;persist();render()});const toggle=main.querySelector('#inlineToggle');if(toggle)toggle.onchange=e=>{data.inline=e.target.checked;persist();render()};main.querySelectorAll('[data-inspect]').forEach(b=>b.onclick=()=>{inspected[b.dataset.inspect]=!inspected[b.dataset.inspect];if(view==='simulation'&&inspected[b.dataset.inspect])everInspected[b.dataset.inspect]=true;
+    render();
+    if(inspected[b.dataset.inspect]&&b.classList.contains('email-link')&&matchMedia('(max-width: 1099px)').matches){
+      const entries=main.querySelector('#evidenceEntries');
+      entries.tabIndex=-1;
+      entries.focus();
+    }
+    if(inspected[b.dataset.inspect]&&!matchMedia('(prefers-reduced-motion: reduce)').matches){
+      for(const clue of main.querySelectorAll(`[data-evidence-source="${b.dataset.inspect}"], [data-clue="${b.dataset.inspect}"]`)){
+        clue.animate([{outline:'3px solid #6d9e76',outlineOffset:'7px'},{outlineOffset:'4px'}],{duration:500,easing:'ease-out'});
+      }
+    }});
+  main.querySelectorAll('[data-locate-clue]').forEach(button=>button.onclick=()=>{
+    const source=main.querySelector('[data-evidence-source="'+button.dataset.locateClue+'"]');
+    source?.focus();
+  });
+  main.querySelectorAll('[data-jump]').forEach(b=>b.onclick=()=>goScenario(Number(b.dataset.jump)))}
 function designExplanation(){return {minimal:'A passive notice asks the user to work out the risk and the next step. Familiar, vague text can be easy to overlook.',clear:'Specific wording brings relevant evidence into view. This reduces the need to remember an address or infer what a generic warning means.',actionable:'The same evidence is paired with a concrete next step. This supports error prevention and reduces the effort needed to act on a concern.'}[data.profile]}
-function renderDesign(){const s=scenarios[labIndex];main.innerHTML=intro('Make the invisible visible','Good security is also good design.','Change one design variable at a time. Observe the interface, then explain how it supports a human decision.')+`<div class="notice">This is an interactive design demonstration, not a prediction of human behaviour. Changing a setting never changes whether a message is suspicious.</div><div class="design-layout"><section class="card design-controls"><div><label class="field-label" for="labScenario">Choose a scenario</label><select id="labScenario">${scenarios.map((x,i)=>`<option value="${i}" ${labIndex===i?'selected':''}>${i+1}. ${x.title}</option>`).join('')}</select><div class="field-label">Warning design</div>${profileButtons()}</div><div>${toggleHTML()}<div class="explain-card"><b>${profiles[data.profile].label} design</b>${designExplanation()}<br><br>Try holding the scenario constant and changing only the warning. Then compare the sender being hidden versus visible.</div></div><div class="explain-card"><b>Observe → explain → test</b>What is easier to see? What decision is supported? Ask a classmate to explain the difference in their own words. A stronger-looking warning is not evidence that a threat is present.</div></section><section class="card lab-preview"><div class="scenario-head"><div class="scenario-kicker"><span class="scenario-counter">LIVE INTERFACE PREVIEW</span><span class="pill">${profiles[data.profile].label}</span></div><h2>${s.title}</h2><p>${s.context}</p></div>${emailHTML(s,true)}${warningHTML(s)}<div class="lab-summary"><h3>What changed for the learner?</h3><p>${designExplanation()}</p><div class="principle-tags"><span>Visibility</span><span>Recognition over recall</span><span>Error prevention</span></div><p class="small" style="margin-top:13px">Ground truth and teaching explanation remain fixed. No accuracy or risk percentage is generated by these settings.</p></div></section></div>`;bindCommon();main.querySelector('#labScenario').onchange=e=>{labIndex=Number(e.target.value);inspected={sender:false,url:false};render()}}
+function designWarnings(s){
+  if(!compareMinimal||data.profile==='minimal')return warningHTML(s);
+  return `<div class="warning-comparison">
+    <div><div class="card-kicker">BASELINE · MINIMAL</div>${warningHTML(s,'minimal')}</div>
+    <div><div class="card-kicker">CURRENT · ${profiles[data.profile].label}</div>${warningHTML(s)}</div>
+  </div>`;
+}
+function updateDesignWarning(s,animate=false){
+  const y=window.scrollY;
+  main.querySelectorAll('[data-profile]').forEach(b=>b.setAttribute('aria-pressed',b.dataset.profile===data.profile));
+  const compare=main.querySelector('#compareWarnings');
+  compare.disabled=data.profile==='minimal';
+  compare.checked=compareMinimal&&data.profile!=='minimal';
+  const preview=main.querySelector('#designWarning');
+  preview.innerHTML=designWarnings(s);
+  if(animate&&!matchMedia('(prefers-reduced-motion: reduce)').matches){
+    preview.querySelector('.warning-comparison > div:last-child .warning, :scope > .warning-wrap .warning')?.animate(
+      [{opacity:.68,transform:'translateY(5px)'},{opacity:1,transform:'translateY(0)'}],
+      {duration:200,easing:'ease-out'});
+  }
+  main.querySelector('#designExplanation').textContent=designExplanation();
+  window.scrollTo({top:y,behavior:'instant'});
+}
+function renderDesign(){
+  const s=scenarios[labIndex];
+  main.innerHTML=intro('Interface comparison','Same email. Different warning.','Keep the message fixed and compare what each warning helps you notice.')+`
+    <div class="design-layout">
+      <section class="card lab-preview" aria-label="Live interface preview">
+        <div class="scenario-head illustrated">
+          <div class="scenario-copy"><div class="card-kicker">FIXED MESSAGE · LIVE PREVIEW</div><h2>${s.title}</h2><p>${s.context}</p></div>
+          ${caseArt(s.id)}
+        </div>
+        ${emailHTML(s)}
+        <div class="warning-console">
+          <div class="section-top"><h3>Warning design</h3><label class="compare-control"><input type="checkbox" id="compareWarnings" ${data.profile==='minimal'?'disabled':''} ${compareMinimal&&data.profile!=='minimal'?'checked':''}> Compare with Minimal</label></div>
+          ${profileButtons()}
+          <div id="designWarning" aria-live="polite">${designWarnings(s)}</div>
+          <p id="designExplanation" class="muted">${designExplanation()}</p>
+        </div>
+      </section>
+      <aside class="side-stack">
+        <section class="card design-controls">
+          <label class="field-label" for="labScenario">Choose a scenario</label>
+          <select id="labScenario">${scenarios.map((x,i)=>`<option value="${i}" ${labIndex===i?'selected':''}>${i+1}. ${x.title}</option>`).join('')}</select>
+          ${toggleHTML()}
+        </section>
+        ${evidenceHTML(s)}
+        <p class="small muted">Compare what the interface reveals. The message and its authored label stay fixed.</p>
+      </aside>
+    </div>`;
+  bindCommon();
+  main.querySelectorAll('[data-profile]').forEach(button=>button.onclick=()=>{
+    data.profile=button.dataset.profile;
+    if(data.profile==='minimal')compareMinimal=false;
+    persist();
+    updateDesignWarning(s,true);
+  });
+  main.querySelector('#compareWarnings').onchange=e=>{compareMinimal=e.target.checked;updateDesignWarning(s)};
+  main.querySelector('#labScenario').onchange=e=>{
+    labIndex=Number(e.target.value);
+    inspected={sender:false,url:false};
+    compareMinimal=false;
+    render();
+  };
+}
 const recalls=[{q:'Does HTTPS prove that a site belongs to your university?',options:['Yes, a secure connection proves identity.','No. Check the destination and verify through a known service.','Only when the page has a university logo.'],answer:1,why:'HTTPS protects the connection to a site. A misleading site can also use HTTPS. Check which site you are connecting to.'},{q:'Which warning better supports a useful decision?',options:['“Be careful.”','“Danger!” with no explanation.','Specific evidence plus a clear, appropriate next step.'],answer:2,why:'The user needs to understand what matters and how to act. Visual prominence alone is not enough.'},{q:'An external research invitation matches your interests but is unconfirmed. What next?',options:['Verify with your lecturer through a contact you already know.','Trust it because the story is relevant.','Assume every external service is malicious.'],answer:0,why:'Context can make a request convincing without confirming it. Independent verification is useful when evidence is incomplete.'}];
 const returningRecall=recalls.map((q,i)=>i).filter(i=>data.recall[i]!==undefined&&data.recall[i]!==recalls[i].answer);returningRecall.forEach(i=>delete data.recall[i]);
-function renderReport(){const st=stats(),first=firstAttempts(),missed=scenarios.filter(s=>lastAttempt(s.id)&&decisionGrade(s,lastAttempt(s.id).action)==='reconsider');const recallDone=Object.keys(data.recall).length;main.innerHTML=intro('Your learning notebook','From a click to a clearer understanding.','Reflect on the evidence you checked, the decisions you made, and the design principles you can use again.',`<button class="outline-btn" id="exportReport">${icon('download')} Export report</button>`)+`<div class="transfer-launch"><div><h2>Can you apply this without the hints?</h2><p>Try three fresh cases. Give an action and a reason before seeing feedback.</p></div><button class="btn" id="openTransfer">Start transfer check</button></div><div class="metrics"><div class="card metric"><span>Scenarios explored</span><b>${st.done}<span style="font-size:17px"> / 6</span></b><small>Unique scenarios answered</small></div><div class="card metric"><span>Preferred-action match</span><b>${st.accuracy===null?'—':st.accuracy+'%'}</b><small>${st.correct} of ${st.done} first decisions matched the preferred action</small></div><div class="card metric"><span>Average decision time</span><b>${st.average===null?'—':st.average.toFixed(1)+'s'}</b><small>First attempts · hidden-tab time excluded</small></div><div class="card metric"><span>Quick recall</span><b>${recallDone}<span style="font-size:17px"> / 3</span></b><small>${recallDone?recalls.filter((q,i)=>data.recall[i]===q.answer).length+' answers supported':'Retrieve the ideas without the inbox'}</small></div></div><div class="notice">Guided-practice results include on-screen support. A cautious alternative is not an unsafe answer. Preferred-action match records agreement with the scenario’s recommended action; use Transfer check for new cases without hints.</div><div class="report-grid"><section class="card report-card"><h2>Your scenario notebook</h2>${scenarios.map((s,i)=>{const a=lastAttempt(s.id),f=first.find(x=>x.id===s.id);return `<div class="report-row"><div><b>${String(i+1).padStart(2,'0')} · ${s.title}</b><p>${a?`${actions[a.action].label} · ${a.seconds.toFixed(1)}s · ${profiles[a.profile].label} design${f!==a?' · retried':''}`:'Not yet explored'}</p></div><button class="text-button" data-review-one="${i}" aria-label="Open ${esc(s.title)}"><span class="badge-result ${!a?'empty':a.correct?'':'retry'}">${!a?'Explore':a.correct?'Preferred':decisionGrade(s,a.action)==='alternative'?'Cautious':'Revisit'}</span>${icon('arrow')}</button></div>`}).join('')}<div class="report-actions"><button class="soft-btn" id="reviewMissed" ${!missed.length?'disabled':''}>${icon('refresh')} Review missed (${missed.length})</button><button class="outline-btn" id="resumePractice">${icon('layers')} Continue practising</button></div><h2 style="margin-top:25px">Design conditions you tried</h2><p class="small muted" style="margin-bottom:10px">All attempts, including retries. Unequal samples and repeated exposure prevent a causal comparison.</p><table class="report-table"><thead><tr><th>Warning</th><th>Attempts</th><th>Supported</th></tr></thead><tbody>${Object.entries(profiles).map(([key,p])=>{const a=data.attempts.filter(x=>x.profile===key);return `<tr><td>${p.label}</td><td>${a.length}</td><td>${a.length?a.filter(x=>x.correct).length+' / '+a.length:'—'}</td></tr>`}).join('')}</tbody></table></section><section class="card report-card"><div class="card-kicker">RETRIEVAL PRACTICE</div><h2>What stays with you?</h2>${returningRecall.length?'<p class="notice">Welcome back. Previously missed ideas are ready to try again; the inbox and rule trace stay hidden.</p>':''}<p class="small muted">The inbox is hidden. Recall the principles before reading each explanation.</p>${recalls.map((q,i)=>`<div class="recall-question"><h3>${i+1}. ${q.q}</h3><div class="recall-options">${q.options.map((o,j)=>`<button data-recall="${i}" data-option="${j}" ${data.recall[i]!==undefined?'disabled':''} class="${data.recall[i]===j?'selected':''}">${o}</button>`).join('')}</div>${data.recall[i]!==undefined?`<p class="recall-feedback"><b>${data.recall[i]===q.answer?'✓ Supported.':'↗ Revisit this idea.'}</b> ${q.why}</p>`:''}</div>`).join('')}<button class="text-button" id="resetRecall">${icon('refresh')} Try recall again</button></section></div><div class="report-actions"><button class="text-button" id="resetProgress">${icon('refresh')} Reset all progress</button></div>`;hydrateIcons(main);main.querySelector('#openTransfer').onclick=()=>setView('transfer');main.querySelector('#exportReport').onclick=exportReport;main.querySelectorAll('[data-review-one]').forEach(b=>b.onclick=()=>{view='simulation';goScenario(Number(b.dataset.reviewOne));setView('simulation')});main.querySelector('#resumePractice').onclick=()=>setView('simulation');main.querySelector('#reviewMissed').onclick=()=>{reviewQueue=scenarios.map((s,i)=>({s,i})).filter(({s})=>lastAttempt(s.id)&&decisionGrade(s,lastAttempt(s.id).action)==='reconsider').map(x=>x.i);if(!reviewQueue.length)return;reviewMode=true;reviewPos=0;view='simulation';goScenario(reviewQueue[0],true,true);setView('simulation')};main.querySelectorAll('[data-recall]').forEach(b=>b.onclick=()=>{data.recall[b.dataset.recall]=Number(b.dataset.option);persist();render();main.querySelector(`[data-recall="${b.dataset.recall}"][data-option="${b.dataset.option}"]`)?.focus({preventScroll:true})});main.querySelector('#resetRecall').onclick=()=>{data.recall={};persist();render()};main.querySelector('#resetProgress').onclick=()=>document.getElementById('resetDialog').showModal()}
+function renderReport(){const st=stats(),first=firstAttempts(),missed=scenarios.filter(s=>lastAttempt(s.id)&&decisionGrade(s,lastAttempt(s.id).action)==='reconsider');const recallDone=Object.keys(data.recall).length;main.innerHTML=intro('Your learning notebook','From a click to a clearer understanding.','Reflect on the evidence you checked, the decisions you made, and the design principles you can use again.',`<button class="outline-btn" id="exportReport">${icon('download')} Export report</button>`)+`<div class="transfer-launch illustrated-launch">${caseArt('notebook',false)}<div><h2>Can you apply this without the hints?</h2><p>Try three fresh cases. Give an action and a reason before seeing feedback.</p></div><button class="btn" id="openTransfer">Start transfer check</button></div><div class="metrics"><div class="card metric"><span>Scenarios explored</span><b>${st.done}<span style="font-size:17px"> / 6</span></b><small>Unique scenarios answered</small></div><div class="card metric"><span>Preferred-action match</span><b>${st.accuracy===null?'—':st.accuracy+'%'}</b><small>${st.correct} of ${st.done} first decisions matched the preferred action</small></div><div class="card metric"><span>Average decision time</span><b>${st.average===null?'—':st.average.toFixed(1)+'s'}</b><small>First attempts · hidden-tab time excluded</small></div><div class="card metric"><span>Quick recall</span><b>${recallDone}<span style="font-size:17px"> / 3</span></b><small>${recallDone?recalls.filter((q,i)=>data.recall[i]===q.answer).length+' answers supported':'Retrieve the ideas without the inbox'}</small></div></div><div class="notice">Guided-practice results include on-screen support. A cautious alternative is not an unsafe answer. Preferred-action match records agreement with the scenario’s recommended action; use Transfer check for new cases without hints.</div><div class="report-grid"><section class="card report-card"><h2>Your scenario notebook</h2>${scenarios.map((s,i)=>{const a=lastAttempt(s.id),f=first.find(x=>x.id===s.id);return `<div class="report-row"><div><b>${String(i+1).padStart(2,'0')} · ${s.title}</b><p>${a?`${actions[a.action].label} · ${a.seconds.toFixed(1)}s · ${profiles[a.profile].label} design${f!==a?' · retried':''}`:'Not yet explored'}</p></div><button class="text-button" data-review-one="${i}" aria-label="Open ${esc(s.title)}"><span class="badge-result ${!a?'empty':a.correct?'':'retry'}">${!a?'Explore':a.correct?'Preferred':decisionGrade(s,a.action)==='alternative'?'Cautious':'Revisit'}</span>${icon('arrow')}</button></div>`}).join('')}<div class="report-actions"><button class="soft-btn" id="reviewMissed" ${!missed.length?'disabled':''}>${icon('refresh')} Review missed (${missed.length})</button><button class="outline-btn" id="resumePractice">${icon('layers')} Continue practising</button></div><h2 style="margin-top:25px">Design conditions you tried</h2><p class="small muted" style="margin-bottom:10px">All attempts, including retries. Unequal samples and repeated exposure prevent a causal comparison.</p><table class="report-table"><thead><tr><th>Warning</th><th>Attempts</th><th>Supported</th></tr></thead><tbody>${Object.entries(profiles).map(([key,p])=>{const a=data.attempts.filter(x=>x.profile===key);return `<tr><td>${p.label}</td><td>${a.length}</td><td>${a.length?a.filter(x=>x.correct).length+' / '+a.length:'—'}</td></tr>`}).join('')}</tbody></table></section><section class="card report-card"><div class="card-kicker">RETRIEVAL PRACTICE</div><h2>What stays with you?</h2>${returningRecall.length?'<p class="notice">Welcome back. Previously missed ideas are ready to try again; the inbox and rule trace stay hidden.</p>':''}<p class="small muted">The inbox is hidden. Recall the principles before reading each explanation.</p>${recalls.map((q,i)=>`<div class="recall-question"><h3>${i+1}. ${q.q}</h3><div class="recall-options">${q.options.map((o,j)=>`<button data-recall="${i}" data-option="${j}" ${data.recall[i]!==undefined?'disabled':''} class="${data.recall[i]===j?'selected':''}">${o}</button>`).join('')}</div>${data.recall[i]!==undefined?`<p class="recall-feedback"><b>${data.recall[i]===q.answer?'✓ Supported.':'↗ Revisit this idea.'}</b> ${q.why}</p>`:''}</div>`).join('')}<button class="text-button" id="resetRecall">${icon('refresh')} Try recall again</button></section></div><div class="report-actions"><button class="text-button" id="resetProgress">${icon('refresh')} Reset all progress</button></div>`;hydrateIcons(main);main.querySelector('#openTransfer').onclick=()=>setView('transfer');main.querySelector('#exportReport').onclick=exportReport;main.querySelectorAll('[data-review-one]').forEach(b=>b.onclick=()=>{view='simulation';goScenario(Number(b.dataset.reviewOne));setView('simulation')});main.querySelector('#resumePractice').onclick=()=>setView('simulation');main.querySelector('#reviewMissed').onclick=()=>{reviewQueue=scenarios.map((s,i)=>({s,i})).filter(({s})=>lastAttempt(s.id)&&decisionGrade(s,lastAttempt(s.id).action)==='reconsider').map(x=>x.i);if(!reviewQueue.length)return;reviewMode=true;reviewPos=0;view='simulation';goScenario(reviewQueue[0],true,true);setView('simulation')};main.querySelectorAll('[data-recall]').forEach(b=>b.onclick=()=>{data.recall[b.dataset.recall]=Number(b.dataset.option);persist();render();main.querySelector(`[data-recall="${b.dataset.recall}"][data-option="${b.dataset.option}"]`)?.focus({preventScroll:true})});main.querySelector('#resetRecall').onclick=()=>{data.recall={};persist();render()};main.querySelector('#resetProgress').onclick=()=>document.getElementById('resetDialog').showModal()}
 function exportReport(){const st=stats();const report={application:'SignalLab',version:'2.0',exportedAt:new Date().toISOString(),scope:'Local practice only; not a validated assessment or controlled experiment.',metrics:{uniqueScenarios:st.done,firstAttemptCorrect:st.correct,guidedPreferredActionMatchPercent:st.accuracy,firstAttemptAverageSeconds:st.average},attempts:data.attempts,transferCheck:data.transfer.map(a=>({...a,preferred:a.action===transferCases[a.id].answer,reasonCorrect:a.reason===transferCases[a.id].correctReason})),recall:recalls.map((q,i)=>({question:q.q,selected:data.recall[i]===undefined?null:q.options[data.recall[i]],correct:data.recall[i]===undefined?null:data.recall[i]===q.answer})),sources:['https://doi.org/10.6028/NIST.TN.2276','https://doi.org/10.1145/1357054.1357219']};const url=URL.createObjectURL(new Blob([JSON.stringify(report,null,2)],{type:'application/json'}));const a=document.createElement('a');a.href=url;a.download='signallab-learning-report.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);toast('Download requested. Save the file when prompted.')}
-function renderResearch(){main.innerHTML=intro('Evidence behind the experience','A little research. A lot of intention.','One learning concept: how visible evidence and actionable warnings support human phishing decisions.')+`<div class="source-grid"><article class="card source-card"><div class="source-num">01 · HUMAN-CENTRED CYBERSECURITY</div><h2>NIST Phish Scale User Guide</h2><p>Dawkins & Jacobs (2023), NIST Technical Note 2276.</p><p>The guide considers both message cues and how a phishing premise aligns with the recipient’s context when describing human detection difficulty.</p><a href="https://csrc.nist.gov/pubs/tn/2276/final" target="_blank" rel="noopener noreferrer">Read the NIST publication ${icon('external')}</a><div class="source-use"><b>Our design interpretation</b>Students inspect actual sender and destination information, while scenario context includes expected tasks and unexpected demands. Our three teaching levels are author-designed; they are not formal NIST Phish Scale ratings.</div></article><article class="card source-card"><div class="source-num">02 · USABLE SECURITY WARNINGS</div><h2>You’ve Been Warned</h2><p>Egelman, Cranor & Hong (2008), CHI. DOI: 10.1145/1357054.1357219.</p><p>This laboratory study examined active and passive browser phishing warnings and how people responded to them.</p><a href="https://www.cs.cmu.edu/~jasonh/publications/chi2008-active-warnings-study-final.pdf" target="_blank" rel="noopener noreferrer">Read the author-hosted paper ${icon('external')}</a><div class="source-use"><b>Our design interpretation</b>Compare generic notices with evidence-based and actionable guidance. These are original teaching variants, not replicas of the study conditions. No published effect size is applied to our simulator.</div></article></div><section class="card objectives"><h2>After this simulator, you should be able to…</h2><ol><li>Distinguish a familiar display name from an actual sender or destination.</li><li>Combine message cues with independently known task context.</li><li>Explain why HTTPS and a convincing story do not establish legitimacy.</li><li>Choose an appropriate next step, including verification when evidence is incomplete.</li><li>Explain how visibility, recognition over recall, and actionable feedback affect interface usability.</li></ol><div class="method-grid"><div><h3>A simulator, not just a quiz</h3><p>Inputs: warning style, sender visibility and user decisions. Rules: fixed scenario evidence and answer rationale. Outputs: the rendered interface, explanations and actual recorded attempts. Interface changes never rewrite scenario ground truth.</p></div><div><h3>What this prototype can tell you</h3><p>You can observe design differences and reflect on your own practice. To evaluate effectiveness, use an instructor-reviewed study with balanced conditions, unseen messages and informed participants. This app does not claim a measured learning improvement.</p></div><div><h3>Privacy and boundaries</h3><p>Progress is saved locally in your browser. There are no analytics, emails, credential fields, real phishing destinations or network APIs in the simulator. Export creates a local JSON file containing decisions, timing and timestamps.</p></div><div><h3>AI and validation</h3><p>Generative AI assisted with design, code and draft explanations. The references are real; the campus messages are fictional. Check course alignment against your notes. Lecturer review is encouraged by the competition, and peer testing is still pending until real learners take part.</p></div></div></section><div class="report-actions"><a class="outline-btn" href="README.md" download>${icon('download')} Project documentation</a><a class="outline-btn" href="VALIDATION.md" download>Validation record</a><a class="outline-btn" href="AI-DESIGN-LOG.md" download>AI design log</a><a class="outline-btn" href="TEACHER-STEPS.md">Teacher steps & checks</a><a class="outline-btn" href="DEMO-SCRIPT.md" download>${icon('download')} 2–3 minute demo script</a><button class="btn" id="backPractice">Explore the simulator ${icon('arrow')}</button></div>`;hydrateIcons(main);main.querySelector('#backPractice').onclick=()=>setView('simulation')}
-function render(){const a=document.activeElement;let selector=null;if(main.contains(a)){if(a.id)selector='#'+a.id;else if(a.dataset.profile)selector='[data-profile="'+a.dataset.profile+'"]';else if(a.dataset.inspect)selector=(a.classList.contains('email-link')?'.email-link':'.inspect-btn')+'[data-inspect="'+a.dataset.inspect+'"]'}({simulation:renderSimulation,design:renderDesign,policy:renderPolicy,transfer:renderTransfer,report:renderReport,research:renderResearch}[view])();if(selector)main.querySelector(selector)?.focus({preventScroll:true});document.getElementById('storageNotice').hidden=storageOK}
+function renderResearch(){main.innerHTML=intro('Evidence behind the experience','A little research. A lot of intention.','One learning concept: how visible evidence and actionable warnings support human phishing decisions.')+`<div class="source-grid"><article class="card source-card"><div class="source-heading"><div><div class="source-num">01 · HUMAN-CENTRED CYBERSECURITY</div><h2>NIST Phish Scale User Guide</h2></div>${caseArt('cues',false)}</div><p>Dawkins & Jacobs (2023), NIST Technical Note 2276.</p><p>The guide considers both message cues and how a phishing premise aligns with the recipient’s context when describing human detection difficulty.</p><a href="https://csrc.nist.gov/pubs/tn/2276/final" target="_blank" rel="noopener noreferrer">Read the NIST publication ${icon('external')}</a><div class="source-use"><b>Our design interpretation</b>Students inspect actual sender and destination information, while scenario context includes expected tasks and unexpected demands. Our three teaching levels are author-designed; they are not formal NIST Phish Scale ratings.</div></article><article class="card source-card"><div class="source-heading"><div><div class="source-num">02 · USABLE SECURITY WARNINGS</div><h2>You’ve Been Warned</h2></div>${caseArt('warnings',false)}</div><p>Egelman, Cranor & Hong (2008), CHI. DOI: 10.1145/1357054.1357219.</p><p>This laboratory study examined active and passive browser phishing warnings and how people responded to them.</p><a href="https://www.cs.cmu.edu/~jasonh/publications/chi2008-active-warnings-study-final.pdf" target="_blank" rel="noopener noreferrer">Read the author-hosted paper ${icon('external')}</a><div class="source-use"><b>Our design interpretation</b>Compare generic notices with evidence-based and actionable guidance. These are original teaching variants, not replicas of the study conditions. No published effect size is applied to our simulator.</div></article></div><section class="card objectives"><h2>After this simulator, you should be able to…</h2><ol><li>Distinguish a familiar display name from an actual sender or destination.</li><li>Combine message cues with independently known task context.</li><li>Explain why HTTPS and a convincing story do not establish legitimacy.</li><li>Choose an appropriate next step, including verification when evidence is incomplete.</li><li>Explain how visibility, recognition over recall, and actionable feedback affect interface usability.</li></ol><div class="method-grid"><div><h3>A simulator, not just a quiz</h3><p>Inputs: warning style, sender visibility and user decisions. Rules: fixed scenario evidence and answer rationale. Outputs: the rendered interface, explanations and actual recorded attempts. Interface changes never rewrite scenario ground truth.</p></div><div><h3>What this prototype can tell you</h3><p>You can observe design differences and reflect on your own practice. To evaluate effectiveness, use an instructor-reviewed study with balanced conditions, unseen messages and informed participants. This app does not claim a measured learning improvement.</p></div><div><h3>Privacy and boundaries</h3><p>Progress is saved locally in your browser. There are no analytics, emails, credential fields, real phishing destinations or network APIs in the simulator. Export creates a local JSON file containing decisions, timing and timestamps.</p></div><div><h3>AI and validation</h3><p>Generative AI assisted with design, code and draft explanations. The references are real; the campus messages are fictional. Check course alignment against your notes. Lecturer review is encouraged by the competition, and peer testing is still pending until real learners take part.</p></div></div></section><div class="report-actions"><a class="outline-btn" href="README.md" download>${icon('download')} Project documentation</a><a class="outline-btn" href="VALIDATION.md" download>Validation record</a><a class="outline-btn" href="AI-DESIGN-LOG.md" download>AI design log</a><a class="outline-btn" href="TEACHER-STEPS.md">Teacher steps & checks</a><a class="outline-btn" href="DEMO-SCRIPT.md" download>${icon('download')} 2–3 minute demo script</a><button class="btn" id="backPractice">Explore the simulator ${icon('arrow')}</button></div>`;hydrateIcons(main);main.querySelector('#backPractice').onclick=()=>setView('simulation')}
+function render(){const openOptions=[...main.querySelectorAll('.desk-options[open]')].map(el=>el.id);const a=document.activeElement;let selector=null;if(main.contains(a)){if(a.id)selector='#'+a.id;else if(a.dataset.profile)selector='[data-profile="'+a.dataset.profile+'"]';else if(a.dataset.inspect)selector=(a.classList.contains('email-link')?'.email-link':'.inspect-btn')+'[data-inspect="'+a.dataset.inspect+'"]'}({simulation:renderSimulation,design:renderDesign,policy:renderPolicy,transfer:renderTransfer,report:renderReport,research:renderResearch}[view])();for(const id of openOptions){const option=main.querySelector('#'+id);if(option)option.open=true}if(selector)main.querySelector(selector)?.focus({preventScroll:true});document.getElementById('storageNotice').hidden=storageOK}
 function toast(message){clearTimeout(toastTimer);const el=document.getElementById('toast');el.textContent=message;el.hidden=false;toastTimer=setTimeout(()=>el.hidden=true,3500)}
 document.querySelectorAll('[data-view]').forEach(b=>b.onclick=()=>setView(b.dataset.view));
+document.getElementById('workspacePicker').onchange=e=>setView(e.target.value);
 document.querySelectorAll('[data-close]').forEach(b=>b.onclick=()=>document.getElementById(b.dataset.close).close());
 document.getElementById('confirmReset').onclick=()=>{data=fresh();currentAnswer=null;reviewMode=false;inspected={sender:false,url:false};confidence='medium';everInspected={sender:false,url:false};resetTimer();persist();document.getElementById('resetDialog').close();setView('simulation');toast('Progress cleared. Your next decision is a fresh start.')};
 document.addEventListener('visibilitychange',()=>{if(document.hidden&&pauseStart===null)pauseStart=performance.now();else if(!document.hidden&&view==='simulation'&&pauseStart!==null){pausedMs+=performance.now()-pauseStart;pauseStart=null}});
@@ -112,7 +508,7 @@ const transferCases=[
 ];
 function transferStats(){const rows=data.transfer;return {done:rows.length,both:rows.filter(a=>a.action===transferCases[a.id].answer&&a.reason===transferCases[a.id].correctReason).length,reason:rows.filter(a=>a.reason===transferCases[a.id].correctReason).length,overconfident:rows.filter(a=>a.confidence==='high'&&(decisionGrade(transferCases[a.id],a.action)==='reconsider'||a.reason!==transferCases[a.id].correctReason)).length}}
 function renderTransfer(){const st=transferStats(),done=st.done===3;main.innerHTML=intro('Apply it to something new','Would you recognise the next one?','Three fresh situations. Choose an action and explain the evidence. Teaching hints stay hidden until all three decisions are recorded.')+`<div class="notice">This is a short transfer exercise, not a validated security test. It is separate from guided practice. ${done?'Your first round is saved; revisiting this page does not replace it.':'You can visit the other learning activities, then return here. No countdown or time pressure.'}</div>`+(done?transferResults():transferQuestion(st.done));hydrateIcons(main);if(!done){main.querySelector('#transferForm').onsubmit=e=>{e.preventDefault();const form=new FormData(e.target),action=form.get('transferAction'),reason=Number(form.get('transferReason')),confidence=form.get('transferConfidence');if(!Object.hasOwn(actions,action)||!Number.isInteger(reason)||reason<0||reason>2)return;data.transfer.push({id:st.done,action,reason,confidence,at:new Date().toISOString()});persist();render();main.querySelector('h2')?.focus({preventScroll:true})}}else{main.querySelector('#transferExport').onclick=exportReport;main.querySelector('#transferLab').onclick=()=>setView('policy')}}
-function transferQuestion(i){const q=transferCases[i];return `<div class="transfer-layout"><section class="card card-pad"><div class="scenario-kicker"><span class="scenario-counter">New case ${i+1} / 3</span><span class="pill">No teaching hints</span></div><h2 tabindex="-1">${q.title}</h2><p class="transfer-context">${q.context}</p><div class="transfer-message"><div class="small muted">FICTIONAL MESSAGE</div><p class="mono small">${esc(q.from)}</p><p>${q.message}</p><div class="evidence"><b>Destination · displayed, never opened</b><span class="mono">${q.destination}</span></div></div><form id="transferForm"><fieldset><legend>1. What would you do next?</legend>${Object.entries(actions).map(([key,a])=>`<label class="transfer-option"><input type="radio" required name="transferAction" value="${key}"><span>${a.label}</span></label>`).join('')}</fieldset><fieldset><legend>2. Which reason best supports the decision?</legend>${q.reasons.map((r,j)=>`<label class="transfer-option"><input type="radio" required name="transferReason" value="${j}"><span>${r}</span></label>`).join('')}</fieldset><label class="field-label" for="transferConfidence">3. How confident are you?</label><select id="transferConfidence" name="transferConfidence"><option value="low">Still unsure</option><option value="medium" selected>Fairly confident</option><option value="high">Very confident</option></select><button class="btn" type="submit">${i===2?'Reveal my explanations':'Save and continue'} ${icon('arrow')}</button><p class="small muted" style="margin-top:10px">Feedback appears after case 3 to reduce clues for your next answer.</p></form></section><aside class="card card-pad"><div class="eyebrow">From recognition to reasoning</div><h3>A good decision needs a reason.</h3><p class="transfer-context">An answer can be a lucky guess. Explaining the evidence helps reveal what you understood.</p><ol class="transfer-guide"><li>Read what is independently known.</li><li>Inspect the full address and requested action.</li><li>Choose the action the evidence supports.</li><li>Recognise when you need more information.</li></ol><div class="notice" style="margin-top:20px">All domains use .example. No message is sent and no personal details are entered.</div><div class="progress-track"><span style="width:${i/3*100}%"></span></div><p class="small muted">${i} / 3 decisions saved</p></aside></div>`}
+function transferQuestion(i){const q=transferCases[i];return `<div class="transfer-layout"><section class="card card-pad"><div class="scenario-head illustrated transfer-heading"><div class="scenario-copy"><div class="scenario-kicker"><span class="scenario-counter">New case ${i+1} / 3</span><span class="pill">No teaching hints</span></div><h2 tabindex="-1">${q.title}</h2><p class="transfer-context">${q.context}</p></div>${caseArt(['storage','room','placement'][i])}</div><div class="transfer-message"><div class="small muted">FICTIONAL MESSAGE</div><p class="mono small">${esc(q.from)}</p><p>${q.message}</p><div class="evidence"><b>Destination · displayed, never opened</b><span class="mono">${q.destination}</span></div></div><form id="transferForm"><fieldset><legend>1. What would you do next?</legend>${Object.entries(actions).map(([key,a])=>`<label class="transfer-option"><input type="radio" required name="transferAction" value="${key}"><span>${a.label}</span></label>`).join('')}</fieldset><fieldset><legend>2. Which reason best supports the decision?</legend>${q.reasons.map((r,j)=>`<label class="transfer-option"><input type="radio" required name="transferReason" value="${j}"><span>${r}</span></label>`).join('')}</fieldset><label class="field-label" for="transferConfidence">3. How confident are you?</label><select id="transferConfidence" name="transferConfidence"><option value="low">Still unsure</option><option value="medium" selected>Fairly confident</option><option value="high">Very confident</option></select><button class="btn" type="submit">${i===2?'Reveal my explanations':'Save and continue'} ${icon('arrow')}</button><p class="small muted" style="margin-top:10px">Feedback appears after case 3 to reduce clues for your next answer.</p></form></section><aside class="card card-pad"><div class="eyebrow">From recognition to reasoning</div><h3>A good decision needs a reason.</h3><p class="transfer-context">An answer can be a lucky guess. Explaining the evidence helps reveal what you understood.</p><ol class="transfer-guide"><li>Read what is independently known.</li><li>Inspect the full address and requested action.</li><li>Choose the action the evidence supports.</li><li>Recognise when you need more information.</li></ol><div class="notice" style="margin-top:20px">All domains use .example. No message is sent and no personal details are entered.</div><div class="progress-track"><span style="width:${i/3*100}%"></span></div><p class="small muted">${i} / 3 decisions saved</p></aside></div>`}
 function transferResults(){const st=transferStats();return `<div class="metrics"><div class="card metric"><span>Preferred action + reason</span><b>${st.both} / 3</b><small>Both elements matched</small></div><div class="card metric"><span>Evidence understood</span><b>${st.reason} / 3</b><small>Reason choices supported</small></div><div class="card metric"><span>Confidence to revisit</span><b>${st.overconfident}</b><small>High confidence, risky action or weak reason</small></div><div class="card metric"><span>Learning mode</span><b style="font-size:23px">Unaided</b><small>No teaching hints in these cases</small></div></div><section class="card card-pad"><h2 tabindex="-1">The reasoning behind each decision</h2>${data.transfer.map(a=>{const q=transferCases[a.id],grade=decisionGrade(q,a.action),reason=a.reason===q.correctReason;return `<article class="transfer-result"><div class="section-top"><h3>${a.id+1}. ${q.title}</h3><span class="pill">${grade==='preferred'&&reason?'Action + reason supported':grade==='alternative'?'Cautious alternative':'Review the evidence'}</span></div><p><b>Your action:</b> ${actions[a.action].label} · <b>Your reason:</b> ${esc(q.reasons[a.reason])}</p><p>${q.explanation}</p><p class="muted"><b>Key evidence:</b> ${q.reasons[q.correctReason]}</p>${grade==='alternative'?'<p class="small muted">Your cautious action is not labelled unsafe. The preferred-action count reflects the most proportionate action for the stated facts.</p>':''}</article>`}).join('')}<div class="report-actions"><button class="btn" id="transferLab">Explore warning trade-offs ${icon('arrow')}</button><button class="outline-btn" id="transferExport">${icon('download')} Export learning record</button></div><p class="small muted">Three authored cases cannot establish real-world skill or prove improvement. Resetting all progress starts a new practice round, but those cases will no longer be unseen.</p></section>`}
 function ddaHTML(){const a=data.attempts;if(a.length<2)return '<div class="dda-banner"><span><b>DDA · Getting to know your decisions</b><br>Two consecutive preferred decisions suggest more challenge; two risky decisions unlock hints. Cautious alternatives are safe.</span></div>';const last=a.slice(-2),s=scenarios[data.index],success=last.every(x=>x.correct),missed=last.every(x=>decisionGrade(scenarios.find(y=>y.id===x.id),x.action)==='reconsider');if(!success&&!missed)return '<div class="dda-banner"><span><b>DDA · Keep exploring</b><br>No two-decision streak. Choose the level that helps you learn.</span></div>';let target=success?Math.min(3,s.level+1):Math.max(1,s.level-1);const next=scenarios.findIndex(x=>x.level===target);return `<div class="dda-banner"><span><b>DDA · ${success?'2 preferred':'2 risky'} consecutive decisions</b><br>${missed?'Hint: inspect the full destination and compare it with a known service; ask whether you initiated the task. (Evidence inspection)':'You can try a harder situation when ready. (Adaptive difficulty)'}${target===s.level?' You are already at this boundary level.':''}</span>${target!==s.level?`<button class="soft-btn" data-jump="${next}">Try ${levelNames[target].toLowerCase()}</button>`:''}</div>`}
 
@@ -161,18 +557,26 @@ function renderPolicy(){
    <section class="card policy-controls" aria-label="Warning policy inputs">
     <div class="card-kicker">1 · CHANGE THE INPUT</div><h2>Your warning policy</h2>
     <div class="policy-control"><label for="policyThreshold">Warning threshold <output id="policyThresholdValue">${policyState.threshold}</output></label><input id="policyThreshold" type="range" min="0" max="10" step="1" value="${policyState.threshold}" aria-describedby="policyThresholdHelp"><div class="policy-range-labels"><span>0 · Warn on everything</span><span>10 · Warn on nothing</span></div><p id="policyThresholdHelp">Warn when a message’s cue score is <b>at least the threshold</b>. Lower thresholds are more sensitive.</p></div>
+    <button class="soft-btn policy-quick-run" id="policyCompareExample" ${policyState.revealed?'':'hidden'}>${icon('sliders')} Pin 4 &amp; test 2</button>
     <div class="policy-control"><label for="policyMissCost">Cost of one missed threat <output id="policyMissCostValue">${policyState.missCost}</output></label><input id="policyMissCost" type="range" min="1" max="10" step="1" value="${policyState.missCost}"><p>Illustrative points you assign to an unflagged attack.</p></div>
     <div class="policy-control"><label for="policyInterruptCost">Cost of one unnecessary interruption <output id="policyInterruptCostValue">${policyState.interruptCost}</output></label><input id="policyInterruptCost" type="range" min="1" max="10" step="1" value="${policyState.interruptCost}"><p>Illustrative points for warning on a genuine task.</p></div>
-    <div class="policy-rule"><b>2 · FOLLOW THE RULE</b><code>cue score ≥ threshold → warn</code><span>Score = sum of the cue weights below</span>${POLICY_CUES.map(c=>`<div><span>${c.label}</span><b>+${c.weight}</b></div>`).join('')}</div>
-    <button class="outline-btn" id="policyRandom">Try other values</button><div class="policy-tools"><button class="outline-btn" id="policyReset">${icon('refresh')} Reset experiment</button><button class="soft-btn" id="policyPin" ${!policyState.revealed?'disabled':''}>${icon('layers')} Pin for comparison</button></div>
-    <p class="policy-limits">Eight authored messages: four phishing and four legitimate. Scores, labels and costs are teaching fixtures, not a real detector or NIST ratings.</p>
-   </section>
-   <section class="policy-output" aria-label="Warning policy results">
     <div class="card policy-predict" id="policyPrediction"><div class="card-kicker">PREDICT BEFORE YOU RUN</div><h2>If you lower the threshold, what can happen?</h2><p>Keep the same messages. Choose an expectation, then test it.</p><div class="policy-predictions">${[
       'The number of warnings cannot decrease; additional false alarms may appear.',
       'Both missed threats and unnecessary interruptions must decrease.',
       'The underlying messages become more dangerous.'
     ].map((label,i)=>`<button data-policy-prediction="${i}" aria-pressed="${policyState.prediction===i}"><span>${String.fromCharCode(65+i)}</span>${label}</button>`).join('')}</div><button class="btn" id="policyRun" ${policyState.prediction===null?'disabled':''}>Run the experiment ${icon('arrow')}</button></div>
+    <div class="policy-rule"><b>2 · FOLLOW THE RULE</b><code>cue score ≥ threshold → warn</code><span>Score = sum of the cue weights below</span>${POLICY_CUES.map(c=>`<div><span>${c.label}</span><b>+${c.weight}</b></div>`).join('')}</div>
+    <button class="outline-btn" id="policyRandom">Try other values</button><div class="policy-tools"><button class="outline-btn" id="policyReset">${icon('refresh')} Reset experiment</button><button class="soft-btn" id="policyPin" ${!policyState.revealed?'disabled':''}>${icon('layers')} Pin for comparison</button></div>
+    <p class="policy-limits">Eight authored messages: four phishing and four legitimate. Scores, labels and costs are teaching fixtures, not a real detector or NIST ratings.</p>
+   </section>
+   <section class="policy-output" aria-label="Warning policy results">
+    <div class="card policy-ready" id="policyReady" ${policyState.revealed?'hidden':''}>
+      <div class="card-kicker">08 · FICTIONAL MESSAGES</div>
+      <h2>Where will the messages go?</h2>
+      <p>Set the threshold, then make a prediction to see the result of the rule.</p>
+      ${routingArt()}
+      <div class="lane-preview" aria-hidden="true"><span>${icon('alert')} Warn</span><span>${icon('arrow')} Pass</span></div>
+    </div>
     <div id="policyResults" ${policyState.revealed?'':'hidden'}></div>
    </section>
   </div><div class="policy-footnote">What stays fixed: message cues and authored ground truth. What changes: the warning rule and your cost preferences. A warning is a prompt to check evidence, not a verdict.</div>`;
@@ -181,7 +585,10 @@ function renderPolicy(){
     main.querySelector('#'+id).addEventListener('input',event=>{
       policyState[key]=Number(event.target.value);
       main.querySelector('#'+id+'Value').textContent=policyState[key];
-      if(policyState.revealed)policyUpdateResults();
+      if(policyState.revealed){
+        if(key==='threshold')policyUpdateResults();
+        else updatePolicyCost(policyCalculate(policyState.threshold,policyState.missCost,policyState.interruptCost));
+      }
     });
   }
   main.querySelectorAll('[data-policy-prediction]').forEach(button=>button.onclick=()=>{
@@ -190,16 +597,25 @@ function renderPolicy(){
     main.querySelector('#policyRun').disabled=false;
   });
   main.querySelector('#policyRun').onclick=()=>{
-    policyState.revealed=true;main.querySelector('#policyPin').disabled=false;
+    policyState.revealed=true;main.querySelector('#policyPin').disabled=false;main.querySelector('#policyCompareExample').hidden=false;
     policyUpdateResults();
-    main.querySelector('#policyResults').focus({preventScroll:true});
+    main.querySelector('#policyResults').focus();
   };
   main.querySelector('#policyPin').onclick=()=>{
     const r=policyCalculate(policyState.threshold,policyState.missCost,policyState.interruptCost);
     policyState.baseline={threshold:r.threshold,tp:r.tp,fp:r.fp,fn:r.fn,tn:r.tn,warnings:r.warnings};
     policyUpdateResults();
     main.querySelector('#policyPin').textContent='Pinned threshold '+r.threshold;
-    main.querySelector('.policy-comparison')?.scrollIntoView({block:'nearest',behavior:'smooth'});
+  };
+  main.querySelector('#policyCompareExample').onclick=()=>{
+    const baseline=policyCalculate(4,policyState.missCost,policyState.interruptCost);
+    policyState.baseline=baseline;
+    policyState.threshold=2;
+    main.querySelector('#policyThreshold').value=2;
+    main.querySelector('#policyThresholdValue').textContent='2';
+    main.querySelector('#policyPin').textContent='Pinned threshold 4';
+    policyUpdateResults();
+    if(matchMedia('(max-width: 1099px)').matches)main.querySelector('#policyResults').focus();
   };
   main.querySelector('#policyRandom').onclick=()=>{let next;do{next=Math.floor(Math.random()*11)}while(next===policyState.threshold);policyState.threshold=next;renderPolicy()};
   main.querySelector('#policyReset').onclick=()=>{policyState={threshold:4,missCost:5,interruptCost:1,prediction:null,revealed:false,selected:'P3',baseline:null};renderPolicy();main.querySelector('#policyThreshold').focus({preventScroll:true})};
@@ -209,23 +625,87 @@ function renderPolicy(){
 function policyUpdateResults(){
   const r=policyCalculate(policyState.threshold,policyState.missCost,policyState.interruptCost),b=policyState.baseline;
   const target=main.querySelector('#policyResults');if(!target)return;
-  target.hidden=false;target.tabIndex=-1;
+  const previous=new Map([...target.querySelectorAll('[data-policy-message]')].map(button=>[
+    button.dataset.policyMessage,{button,rect:button.getBoundingClientRect(),lane:button.closest('[data-lane]').dataset.lane}
+  ]));
+  for(const {button} of previous.values())button.getAnimations().forEach(animation=>animation.cancel());
+  const focusedMessage=document.activeElement.dataset.policyMessage;
+  const reduceMotion=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  target.hidden=false;
+  target.tabIndex=-1;
+  main.querySelector('#policyReady').hidden=true;
+  const changed=new Map();
+  for(const row of r.rows){
+    const from=b?(row.score>=b.threshold?'warn':'pass'):previous.get(row.id)?.lane;
+    const to=row.warn?'warn':'pass';
+    if(from&&from!==to)changed.set(row.id,{from,to});
+  }
   const prediction=policyState.prediction===0?'Your prediction is supported.':'A useful revision to your prediction:';
   main.querySelector('#policyPrediction').hidden=true;
   target.innerHTML=`<div class="policy-result-intro" role="status"><b>${prediction}</b> Lowering a threshold cannot reduce warnings for fixed scores. It can catch more attacks and flag more genuine messages. Try threshold 4, then 2.</div>
-   <section class="card policy-board"><div class="section-top"><div><div class="card-kicker">3 · OBSERVE THE OUTPUT</div><h2>Where the eight messages go</h2></div><span class="pill" id="policyWarningCount">${r.warnings} / ${r.total} warned</span></div>
-    <div class="policy-metrics">${policyMetric(r.tp,'Threats warned',`of ${r.phish} phishing fixtures`,'policy-good')}${policyMetric(r.fn,'Threats missed',`${policyPercent(r.missRate)} of phishing fixtures`,'policy-missed')}${policyMetric(r.fp,'Unnecessary interruptions',`${policyPercent(r.interruptRate)} of genuine fixtures`,'policy-false')}${policyMetric(r.tn,'Routine tasks uninterrupted',`of ${r.legitimate} genuine fixtures`,'policy-neutral')}</div>
-    <div class="policy-cost"><div><span>Illustrative total cost</span><b>${r.cost}<small> points</small></b></div><p><span class="mono">${r.fn} misses × ${r.missCost} + ${r.fp} interruptions × ${r.interruptCost} = ${r.cost}</span><span>Cost weights change the tradeoff’s value, not which messages trigger warnings.</span></p></div>
-    ${b?`<div class="policy-comparison"><b>Pinned threshold ${b.threshold} → current threshold ${r.threshold}</b><div><span>Warnings <strong>${b.warnings} → ${r.warnings}</strong></span><span>Misses <strong>${b.fn} → ${r.fn}</strong></span><span>False alarms <strong>${b.fp} → ${r.fp}</strong></span></div><p>Same fixture batch in both conditions. This compares rule outputs, not human performance.</p></div>`:'<p class="policy-pin-tip">Pin a result, then change the threshold to compare the same messages under two policies.</p>'}
+   <section class="card policy-trace"><div class="section-top"><div><div class="card-kicker">3 · OBSERVE THE OUTPUT</div><h2>Live mail routing</h2></div><span class="pill" id="policyWarningCount">${r.warnings} / ${r.total} warned</span></div>
+    ${b?`<div class="policy-comparison"><b>Pinned threshold ${b.threshold} → current threshold ${r.threshold}</b><div><span>Warnings <strong>${b.warnings} → ${r.warnings}</strong></span><span>Misses <strong>${b.fn} → ${r.fn}</strong></span><span>False alarms <strong>${b.fp} → ${r.fp}</strong></span></div></div>`:'<p class="policy-pin-tip">Pin a result, then change the threshold to compare the same messages under two policies.</p>'}
+     <div class="routing-summary" role="status">
+       ${changed.size?`<b>${changed.size} of ${r.total} messages changed lanes${b?` since threshold ${b.threshold}`:''}.</b>
+         <span>${[...changed].map(([id,{from,to}])=>`${id} · ${from==='warn'?'Warn':'Pass'} → ${to==='warn'?'Warn':'Pass'}`).join('  |  ')}</span>`:
+         `<b>${b?`Same routes as threshold ${b.threshold}.`:previous.size?'All messages stayed in their lanes.':'Adjust the threshold to move messages.'}</b><span>Pick a card to inspect the score behind its route.</span>`}
+     </div>
+     <div class="policy-lanes">
+       <section class="policy-lane warn-lane" aria-label="Warn"><h3>${icon('alert')} Warn <span>${r.warnings}</span></h3><div data-lane="warn"></div></section>
+       <section class="policy-lane pass-lane" aria-label="Pass"><h3>${icon('arrow')} Pass <span>${r.total-r.warnings}</span></h3><div data-lane="pass"></div></section>
+     </div>
    </section>
-   <section class="card policy-trace"><div class="section-top"><div><div class="card-kicker">OPEN THE BLACK BOX</div><h2>Inspect a message’s calculation</h2></div><span class="small muted">Select any row</span></div><div class="policy-message-list">${r.rows.map(row=>`<button class="policy-message ${row.id===policyState.selected?'selected':''}" data-policy-message="${row.id}" aria-pressed="${row.id===policyState.selected}"><span class="policy-id">${row.id}</span><span class="policy-message-title"><b>${row.title}</b><small>Authored label: ${row.truth==='phish'?'phishing':'legitimate'}</small></span><span class="policy-score">${row.score}<small> / 9</small></span><span class="policy-outcome ${POLICY_OUTCOMES[row.outcome].className}">${POLICY_OUTCOMES[row.outcome].short}</span></button>`).join('')}</div><div id="policyTraceDetail"></div></section>
+   <section class="card policy-board">
+     <div id="policyTraceDetail"></div>
+    <div class="policy-metrics">${policyMetric(r.tp,'Threats warned',`of ${r.phish} phishing fixtures`,'policy-good')}${policyMetric(r.fn,'Threats missed',`${policyPercent(r.missRate)} of phishing fixtures`,'policy-missed')}${policyMetric(r.fp,'Unnecessary interruptions',`${policyPercent(r.interruptRate)} of genuine fixtures`,'policy-false')}${policyMetric(r.tn,'Routine tasks uninterrupted',`of ${r.legitimate} genuine fixtures`,'policy-neutral')}</div>
+    <div class="policy-cost">${policyCostHTML(r)}</div>
+   </section>
    <section class="policy-reflection"><div class="mentor-title"><span class="mentor-avatar">${miraAvatar()}</span> The HCI insight</div><p>Attention has a cost. A policy that warns on everything catches every attack in this batch but also interrupts every genuine task. A policy that never warns creates no false alarms and misses every attack. Good warning design needs both understandable messages and a deliberate interruption policy.</p><details><summary>Why can’t this score perfectly separate the messages?</summary><p>The legitimate external survey scores 5, while the compromised-account invitation scores 2. No single threshold can warn on the latter while allowing the former. Better evidence or independent verification may be needed. A cue score is not certainty.</p></details><p class="policy-limit-note">These exact counts are calculated from eight synthetic fixtures. They do not estimate real-world detection rates or warning fatigue.</p></section>`;
-  main.querySelectorAll('[data-policy-message]').forEach(button=>button.onclick=()=>{
-    policyState.selected=button.dataset.policyMessage;
-    main.querySelectorAll('[data-policy-message]').forEach(b=>{const selected=b.dataset.policyMessage===policyState.selected;b.classList.toggle('selected',selected);b.setAttribute('aria-pressed',selected)});
-    policyRenderTrace(r);
-  });
-  policyRenderTrace(r);hydrateIcons(target);
+  const moving=[];
+  for(const row of r.rows){
+    const lane=row.warn?'warn':'pass';
+    const prior=previous.get(row.id);
+    const button=prior?.button||document.createElement('button');
+    button.type='button';
+    button.className='policy-message'+(row.id===policyState.selected?' selected':'')+(changed.has(row.id)?' rerouted':'');
+    button.dataset.policyMessage=row.id;
+    button.setAttribute('aria-pressed',row.id===policyState.selected);
+    button.setAttribute('aria-controls','policyTraceDetail');
+    button.innerHTML=`<span class="policy-id">${row.id}</span>
+      <span class="policy-message-title"><b>${row.title}</b><small>${row.truth==='phish'?'Phishing':'Legitimate'} · score ${row.score}</small></span>
+      <span class="policy-outcome ${POLICY_OUTCOMES[row.outcome].className}">${POLICY_OUTCOMES[row.outcome].short}</span>${changed.has(row.id)?'<span class="reroute-tag">↔ Changed lane</span>':''}`;
+    target.querySelector('[data-lane="'+lane+'"]').append(button);
+    button.onclick=()=>{
+      policyState.selected=row.id;
+      target.querySelectorAll('[data-policy-message]').forEach(card=>{
+        const selected=card===button;
+        card.classList.toggle('selected',selected);
+        card.setAttribute('aria-pressed',selected);
+      });
+      policyRenderTrace(r);
+      const trace=target.querySelector('#policyTraceDetail');
+      trace.tabIndex=-1;
+      trace.focus();
+    };
+    if(prior&&prior.lane!==lane&&!reduceMotion)moving.push({button,rect:prior.rect});
+  }
+  target.querySelectorAll('[data-lane]:empty').forEach(lane=>lane.innerHTML='<p class="lane-empty">No messages at this threshold.</p>');
+  for(const {button,rect} of moving){
+    const next=button.getBoundingClientRect();
+    button.animate([{transform:`translate(${rect.left-next.left}px,${rect.top-next.top}px)`,zIndex:2},
+      {transform:'translate(0,0)',zIndex:2}],{duration:380,easing:'cubic-bezier(.22,1,.36,1)'});
+  }
+  if(focusedMessage)target.querySelector('[data-policy-message="'+focusedMessage+'"]')?.focus({preventScroll:true});
+  policyRenderTrace(r);
+  hydrateIcons(target);
+}
+function updatePolicyCost(r){
+  main.querySelector('.policy-cost').innerHTML=policyCostHTML(r);
+}
+function policyCostHTML(r){
+  return `<div><span>Illustrative total cost</span><b>${r.cost}<small> points</small></b></div>
+    <p><span class="mono">${r.fn} misses × ${r.missCost} + ${r.fp} interruptions × ${r.interruptCost} = ${r.cost}</span>
+    <span>Cost weights change the tradeoff’s value, not which messages trigger warnings.</span></p>`;
 }
 
 function policyRenderTrace(result){
