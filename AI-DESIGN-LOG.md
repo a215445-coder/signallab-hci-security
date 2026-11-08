@@ -71,3 +71,11 @@ The revised five-line answer was received and saved as a NotebookLM note. Review
 5. Check application on fresh cases, recording actions and reasons.
 
 These lines are reviewed design adaptations. In particular, NotebookLM suggested quarterly testing; the current app does not schedule it. A short fresh-case exercise is descriptive evidence, not a validated transfer measure. NotebookLM’s response does not establish that the paper studies TK2233 or endorses this app.
+
+## Information observatory visual redesign — 8 November 2026
+
+The participant requested a more distinctive visual identity and literal, case-specific images, then approved implementation of the planned redesign. Codex assisted with a dark mail-exhibit hero, editorial case composition, typography, responsive styles, GSAP transitions and original procedural Three.js geometry. The learning content and policy calculations were retained.
+
+The built-in image-generation tool produced six new product-style illustrations from case keywords: student identity/account, library, scholarship money, timetable, research invitation and web domain. Research uses an invitation rather than assuming a laboratory discipline. Artwork is decorative and does not encode case verdicts or real destinations. It is not evidence that a sender or message is authentic. Original PNGs, optimized JPEGs and the exact prompts are in [the source image record](https://github.com/a215445-coder/signallab-hci-security/blob/main/motion/assets/exhibition/README.md). Earlier images are preserved in the source tree.
+
+Browser checks covered topic matching, selected practice/experiment flows, responsive widths, motion preferences and a simulated WebGL fallback. They demonstrate software behavior, not improved learning or teacher assessment. See [the validation record](VALIDATION.md) for scope and pending human review.
