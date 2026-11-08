@@ -24,6 +24,10 @@ For GitHub Pages, publish the **contents of `dist`** as the site artifact. The h
 
 ## Explore the simulator
 
+The investigation-room home groups the app into **Practice**, **Experiments** and **My notebook**. Research & guide remains a secondary header link. Practice opens an illustrated case file, reveals the decision controls when the learner is ready, then presents evidence-based feedback with the next case nearby. Inspection is optional; settings and Mira hints are available on demand. Warning conditions still appear before a decision is recorded.
+
+Experiments contains the warning-design and warning-policy activities. My notebook leads with progress and a next action; detailed statistics, condition counts and recall questions expand separately. The three-case transfer exercise remains available from the notebook, with feedback withheld until all three answers are saved.
+
 | Workspace | What you do | What it teaches |
 |---|---|---|
 | **Simulation** | Inspect six fictional campus messages and choose a next action | Use evidence and independently known context; verify when uncertain |

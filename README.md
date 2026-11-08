@@ -14,6 +14,9 @@ For a local web preview, run `python3 -m http.server 8767 --directory dist` from
 
 ## What learners do
 
+- Start in the campus investigation room and open one of six illustrated case files.
+- Move through inspection, decision and explanation one step at a time. Hints and settings remain available on demand.
+- Use **Practice**, **Experiments** and **My notebook** as the three main navigation choices; research remains available through a secondary guide link.
 - Inspect six fictional campus messages and compare three warning designs.
 - Predict a warning-policy outcome, adjust the threshold and costs, and trace all eight synthetic messages through the calculation.
 - Pin a policy for comparison and see the trade-off between missed threats and unnecessary interruptions.

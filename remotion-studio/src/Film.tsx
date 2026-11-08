@@ -5,6 +5,7 @@ import captions from './captions.json';
 import {Focus,Sweep,TradeOff} from './Motion';
 import {SoundDesign} from './SoundDesign';
 import {Intro} from './Intro';
+import {FreshCaseAnswer, FreshCasePrompt, ThresholdPrediction, WarningComparison} from './Middle';
 const ink='#102b25',paper='#f2f3eb';
 const enter=(f:number,d=0)=>spring({frame:f-d,fps:24,config:{damping:200}});
 const Outro:React.FC=()=>{
@@ -27,12 +28,12 @@ const Outro:React.FC=()=>{
  </AbsoluteFill>{f>=324&&f<372?<div style={{position:'absolute',left:'50%',top:'50%',translate:'-50% -50%',width:1920*sx,height:Math.max(2,1080*sy),background:'#effff5',opacity:Math.min(.8,(f-324)/20)*opacity,boxShadow:'0 0 25px 7px #b0ffd0'}}/>:null}</AbsoluteFill>
 };
 const Captions:React.FC=()=>{const f=useCurrentFrame();const {fps}=useVideoConfig();const c=captions.find(c=>c.startMs<=f/fps*1000&&c.endMs>f/fps*1000);return c?<div style={{position:'absolute',bottom:32,left:'50%',translate:'-50% 0',width:680,maxHeight:90,fontSize:34,lineHeight:1.3,textAlign:'center',color:'white',padding:'0 22px',fontWeight:500,textShadow:'0 2px 5px #000, 0 0 3px #000',WebkitTextStroke:'0.6px #20312a',paintOrder:'stroke fill'}}>{c.text}</div>:null};
-export const Film:React.FC=()=> <AbsoluteFill style={{background:ink,fontFamily:'Arial,sans-serif'}}><div style={{position:'absolute',left:0,top:0,width:1920,height:906,overflow:'hidden',scale:'1 '+1080/906,transformOrigin:'center top'}}><Video muted src={staticFile('walkthrough.mp4')} style={{width:1920,height:1080}}/></div><Audio src={staticFile('narration.m4a')}/><SoundDesign/><Sequence name="Opening animation" from={0} durationInFrames={224}><Intro/></Sequence><Sequence name="Threshold spotlight" from={936} durationInFrames={71}><Focus box={[350,400,425,205]} label="Change one input"/></Sequence>
-<Sequence name="Trade-off connection" from={1188} durationInFrames={71}><TradeOff/></Sequence>
+export const Film:React.FC=()=> <AbsoluteFill style={{background:ink,fontFamily:'Arial,sans-serif'}}><div style={{position:'absolute',left:0,top:0,width:1920,height:906,overflow:'hidden',scale:'1 '+1080/906,transformOrigin:'center top'}}><Video muted src={staticFile('walkthrough.mp4')} style={{width:1920,height:1080}}/></div><Audio src={staticFile('narration.m4a')}/><SoundDesign/><Sequence name="Opening animation" from={0} durationInFrames={224}><Intro/></Sequence><Sequence name="Predict before moving the slider" from={830} durationInFrames={66}><ThresholdPrediction/></Sequence><Sequence name="Threshold spotlight" from={936} durationInFrames={71}><Focus box={[350,400,425,205]} label="Change one input"/></Sequence>
+<Sequence name="Trade-off connection" from={1188} durationInFrames={81}><TradeOff/></Sequence>
 <Sequence name="Visible calculation" from={1728} durationInFrames={71}><Focus box={[300,620,1350,200]} label="Cue score → rule → warning"/></Sequence>
 <Sequence name="Design chapter transition" from={1938} durationInFrames={20}><Sweep/></Sequence>
-<Sequence name="Actionable guidance focus" from={2328} durationInFrames={71}><Focus box={[35,550,1840,390]} label="Evidence + a safe next step"/></Sequence>
+<Sequence name="Same email, different warning design" from={2013} durationInFrames={818}><WarningComparison/></Sequence>
 <Sequence name="Transfer chapter transition" from={2822} durationInFrames={20}><Sweep/></Sequence>
-<Sequence name="Reasoning focus" from={2976} durationInFrames={71}><Focus box={[110,400,1460,555]} label="Action + reason"/></Sequence>
+<Sequence name="Predict the fresh-case action" from={2890} durationInFrames={60}><FreshCasePrompt/></Sequence><Sequence name="Reveal action, then reason" from={2979} durationInFrames={77}><FreshCaseAnswer/></Sequence>
 <Sequence name="Evidence chapter transition" from={3441} durationInFrames={20}><Sweep/></Sequence>
 <Sequence name="Closing animation" from={3790} durationInFrames={396}><Outro/></Sequence><Captions/></AbsoluteFill>;
