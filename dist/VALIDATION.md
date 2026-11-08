@@ -6,6 +6,44 @@
 
 This record distinguishes software correctness, content review and evidence of learning. A working prototype is not proof that it improves real-world phishing detection.
 
+## 8 November 2026 — 3D and motion follow-up
+
+### Information observatory redesign (current)
+
+Replaced the small desk hero with a procedural Three.js mail exhibit and a matching SVG fallback; added a dark exhibition stage, editorial case layout, system display typography and redesigned experiment illustrations. All six case artworks were regenerated as subject-specific product still lifes. Research depicts an academic invitation rather than laboratory equipment. AI image originals, exact prompts and optimized copies are preserved in the motion source directory. No authored case evidence, preferred actions or policy calculations were changed.
+
+- Verified all six homepage images load at 1104px and each matching detail/Design Lab selection displays the corresponding new image.
+- Opened the first case, inspected sender and destination, saved a cautious verification decision and advanced to the library case. Compared actionable and minimal warnings, then ran the eight-message policy experiment. No page script errors were recorded in this journey.
+- Tested raycast selection on the exhibit magnifier: it opened Experiments. Equivalent visible HTML buttons remain available. Checked manual motion toggling and system reduced motion; the exhibit stays still and all six case images remain present. A simulated WebGL context loss exposes the matching mail SVG.
+- Checked homepage, experiments, notebook, case detail, Design Lab and policy at widths 320, 390 and 1440. Fixed a 320px overflow in the three-step practice indicator and verified that width again. Other checked layouts had no horizontal overflow.
+- Inspected integrated homepage/experiment screenshots and checked mobile layout dimensions. Browser learning records and manual motion preferences were restored after verification. Existing syntax and all 11 hand-calculated policy checks pass.
+
+These browser checks do not certify physical-device performance or replace the pending human usability/content review below. Earlier desk, miniature and palette notes describe superseded intermediate designs.
+
+### Multi-color palette (latest)
+
+Applied fog-white surfaces and navy text, blue main actions, purple experiment controls, teal evidence/notebook areas, six consistent case accents, amber cautions and green completed feedback. Recolored the procedural homepage desk and its inbox texture. Original case raster illustrations remain unchanged.
+
+Checked homepage, experiment landing, notebook and case detail at widths 320, 390 and 1440: no horizontal overflow. Exercised sender inspection, a cautious account decision and next-case navigation; opened the research preview in Design Lab and ran the policy experiment. Learning data was restored afterward. Checked primary button and six topic label color pairs against 4.5:1, correcting the library label. These are targeted checks, not a complete accessibility audit. Existing syntax and all 11 policy calculations pass.
+
+### Keyword-image replacement (latest)
+
+Replaced the earlier six procedural case miniatures with built-in AI-generated keyword illustrations. Verified all six homepage images load and each case detail and Design Lab selection uses its matching topic image. At browser viewport widths 320, 390 and 1440, the homepage had no horizontal overflow. Reduced-motion mode retained all six images; the separate homepage desk retained its canvas. Inspected the integrated homepage screenshot. Syntax and all 11 policy-model checks passed. This supersedes the live case-renderer behavior described in the earlier follow-up below; the old case renderer is no longer mounted.
+
+Case-visual follow-up: verified six different rendered posters and six matching detail-page topic IDs; each homepage card entered its own live scene on hover, with at most one case canvas attached. Design Lab selecting the research case displayed the research scene. A library decision and advance to the scholarship case passed. Reduced-motion mode retained all six posters with no live case canvas. Simulated case-renderer context loss exposed all six SVG fallbacks. Homepage and library detail layouts had no horizontal overflow at widths 320, 390 and 1440. Inspected homepage and detail screenshots. Browser learning records were restored after the checks.
+
+Checked the standalone local file after embedding Three.js and GSAP:
+
+- The procedural desk rendered through WebGL; clicking its notebook opened My notebook. The manual animation toggle switched state correctly.
+- Inspected sender and destination, saved a high-confidence decision with both inspection flags, then advanced to the next case. Both warning designs appeared in comparison mode.
+- Ran the eight-message policy experiment, pinned a baseline, changed the threshold, reset and randomized it. Reset retains the experiment navigation and progressive disclosures.
+- Replayed all six guided cases and all three transfer cases. Six attempts and three transfer records were saved; no page script errors were recorded in that journey. Original browser learning data was restored afterward.
+- Emulated reduced motion: animation control reflected the system preference and the scene remained available as a still view. Simulated a WebGL context loss: the original SVG became visible.
+- Checked homepage widths of 320, 390 and 1440 pixels: no horizontal overflow and one active scene canvas. Inspected a full-page screenshot of the narrow layout.
+- Existing syntax and all 11 hand-calculated policy-threshold cases passed through `scripts/check.cjs`.
+
+These are software checks in the integrated browser, not physical-device performance certification or evidence of learning effectiveness. Human trials remain pending.
+
 ## 1. Software checks
 
 The earlier prototype was exercised through six scenarios, retry, persistence, recall, export and narrow-screen layout. Those checks do not validate later changes. Record the final build's results below; do not mark a check passed before running it.

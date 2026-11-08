@@ -35,7 +35,11 @@ For a local web preview, run `python3 -m http.server 8767 --directory dist` from
 
 Run `node scripts/check.cjs` to check JavaScript syntax and the actual embedded policy model against hand-calculated expectations.
 
+The information observatory opens with an original procedural Three.js mail exhibit: a message, magnifier, identity card and notebook. Its objects provide supplementary navigation alongside visible buttons. GSAP coordinates the single entrance sequence, image continuity when opening a case, evidence collection, decision feedback and experiment transitions. A **Motion on/off** control, system reduced-motion handling and a matching static SVG fallback are included. All runtime code and case images are embedded in the standalone HTML; opening it requires no external downloads. Editable sources and rebuild instructions are in [motion/README.md](motion/README.md).
+
 ## Competition focus
+
+The six case illustrations follow literal keywords from their text: student account, library, scholarship money, timetable, research invitation and web domain. Each uses its own rich studio color, with realistic paper, metal and glass materials. Images are embedded for offline use; [originals and exact generation prompts](motion/assets/exhibition/README.md) are preserved with the editable sources. Classroom reading areas remain light and clearly separated from the dark exhibit.
 
 The [official teaching kit](https://nazatulainiabdmajid.github.io/kit-cabaran-simulator-FTSM/#hantar) allocates **25% accuracy, 25% interactivity/functionality, 20% learning value, 15% creativity, 10% meaningful generative AI use and 5% documentation/video**. Creativity is one part of the score.
 
